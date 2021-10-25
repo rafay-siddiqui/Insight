@@ -7,6 +7,7 @@ import Button from './components/Button';
 import HistoryItem from './components/HistoryItem';
 import History from './components/History';
 import Avatar from './components/Avatar';
+import YourStocks from './components/YourStocks';
 
 class App extends Component {
   constructor(props) {
@@ -31,13 +32,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <img src={logo} className= "App-logo" alt="logo" />
+     
+       
+      <ul className="App">
+      <img src={logo} className= "App-logo" alt="logo" />
         <Button id="login" onClick={this.fetchData} label="Login" />
         <Button id="nav" onClick={this.fetchData} label="Nav" />
+        <Button id="chart" onClick={this.fetchData} label="Chart" />
         <History></History>
         <Avatar/>
-      </div>
+    
+        <YourStocks></YourStocks>
+      </ul>
     );
   }
 }

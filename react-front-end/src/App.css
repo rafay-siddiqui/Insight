@@ -1,11 +1,9 @@
 .App {
-  margin-top: 50px;
+  margin-top: 200px;
   height: max-content;
   width: max-content;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .App-logo {
