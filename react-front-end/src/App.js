@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
+import Button from './components/Button';
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -27,9 +29,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
+        <Button id="login" onClick={this.fetchData} label="Login" />
+        <Button id="nav" onClick={this.fetchData} label="Nav" />    
       </div>
     );
   }
