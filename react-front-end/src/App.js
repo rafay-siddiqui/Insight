@@ -5,6 +5,7 @@ import './App.css';
 import Button from './components/Button';
 import HistoryItem from './components/HistoryItem';
 import History from './components/History';
+import YourStocks from './components/YourStocks';
 
 class App extends Component {
   constructor(props) {
@@ -29,11 +30,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <ul className="App">
         <Button id="login" onClick={this.fetchData} label="Login" />
         <Button id="nav" onClick={this.fetchData} label="Nav" />
+        <Button id="chart" onClick={this.fetchData} label="Chart" />
         <History></History>
-      </div>
+        <YourStocks></YourStocks>
+      </ul>
     );
   }
 }

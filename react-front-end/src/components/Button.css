@@ -27,6 +27,10 @@
   font-size: 2rem;
 }
 
-#nav:hover {
-  opacity: 1;
+#chart {
+  border-color: black;
+}
+
+#chart:hover{
+  background-color: lightgray;
 }
