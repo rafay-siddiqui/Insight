@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 
 import Button from './components/Button';
+import HistoryItem from './components/HistoryItem';
+import History from './components/History';
 
 class App extends Component {
   constructor(props) {
@@ -28,9 +30,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>{ this.state.message }</h1>
         <Button id="login" onClick={this.fetchData} label="Login" />
-        <Button id="nav" onClick={this.fetchData} label="Nav" />    
+        <Button id="nav" onClick={this.fetchData} label="Nav" />
+        <History></History>
       </div>
     );
   }
