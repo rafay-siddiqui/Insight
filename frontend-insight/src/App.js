@@ -52,7 +52,7 @@ function App() {
             {/* Burhan's testing page */}
             <Route path='/testing/burhan'>
               <h2>Burhan</h2>
-              <Button id='chart' label='work pls' ></Button>
+              <Button chart label='work pls' ></Button>
             </Route>
 
             {/* Chandni's testing page */}
