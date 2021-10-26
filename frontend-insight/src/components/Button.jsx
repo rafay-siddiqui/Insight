@@ -8,13 +8,15 @@ export default function Button(props) {
     'button--login': props.login,
     'button--chart': props.chart,
     'button--nav': props.nav,
+    'button--tab': props.tab,
   });
 
   return (
     <button
       className={buttonClass}
-      onClick={props.onClick} >
-      {props.label}
+      onClick={props.onClick}
+    >
+      {props.children}
     </button>
   )
 };

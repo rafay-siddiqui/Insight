@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Button from './components/Button';
 import History from './components/History';
+import TabView from './components/TabView';
 
 function App() {
   return (
@@ -46,14 +47,14 @@ function App() {
             <Route path='/testing/rafay'>
               <div>
                 <h2>Rafay</h2>
-                <Button chart label='work pls' ></Button>
+                <TabView></TabView>
               </div>
             </Route>
 
             {/* Burhan's testing page */}
             <Route path='/testing/burhan'>
               <h2>Burhan</h2>
-              <Button chart label='work pls' ></Button>
+              <Button chart>work pls</Button>
             </Route>
 
             {/* Chandni's testing page */}

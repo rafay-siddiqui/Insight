@@ -6,7 +6,6 @@ import img from "../images/AvatarImage.png";
 
 export default function Profile() {
     
-
     return (
       <div >
       <img src={img} className="Avatar-border"></img>
