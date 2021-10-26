@@ -23,10 +23,13 @@ import TodoListViewConnected from '../views/todoList';
 import TwitterFeedConnected from '../views/twitterFeed';
 import WorkProgressConnected from '../views/workProgress';
 import ProtectedConnected from '../views/protected';
+import RafayConnected from '../views/testingPages/rafay';
 
 export const MainRoutes = () => (
   <Switch>
     <Route exact path="/" component={HomeConnected} />
+
+    <Route path="/testing/rafay" component={RafayConnected} />
 
     <Route path="/Dashboard/statsCard" component={StatsCardConnected} />
     <Route path="/Dashboard/earningGraph" component={EarningGraphConnected} />
