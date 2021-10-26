@@ -1,5 +1,4 @@
 import React from "react";
-
 import YourStocksItem from "./YourStocksItem";
 
 export default function YourStocks(props) {

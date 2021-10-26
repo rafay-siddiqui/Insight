@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -46,6 +46,7 @@ function App() {
             <Route path='/testing/rafay'>
               <div>
                 <h2>Rafay</h2>
+                <Button chart label='work pls' ></Button>
               </div>
             </Route>
 

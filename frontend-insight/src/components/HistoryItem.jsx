@@ -1,5 +1,5 @@
 import React from "react";
-import './HistoryItem.css'
+import './HistoryItem.scss'
 
 export default function HistoryItem(props) {
   return (

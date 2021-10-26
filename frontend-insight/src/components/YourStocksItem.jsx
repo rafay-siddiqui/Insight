@@ -1,5 +1,5 @@
 import React from "react";
-import './YourStocksItem.css'
+import './YourStocksItem.scss'
 
 export default function YourStocksItem(props) {
   return (
