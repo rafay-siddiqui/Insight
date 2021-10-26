@@ -1,68 +1,113 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ReactJS version of Director Responsive Admin Template Free
 
-## Available Scripts
+## ⚠️WIP: **`BIG` migration in progress** (toolchain, react, bootstrap etc...)
 
-In the project directory, you can run:
+[![Build Status](https://travis-ci.org/MacKentoch/react-director-admin-template.svg?branch=master)](https://travis-ci.org/MacKentoch/react-director-admin-template)
 
-### `npm start`
+**[If you need more choices and look for other nice templates check https://flatlogic.com](https://flatlogic.com/admin-dashboards?ref=qdyWRz6GDo) ✌️**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Preview
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+![preview](https://raw.githubusercontent.com/MacKentoch/react-director-admin-template/master/preview/preview.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMacKentoch%2Freact-director-admin-template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMacKentoch%2Freact-director-admin-template?ref=badge_shield)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Launch preview here](https://mackentoch.github.io/react-director-admin-template)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Content
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- admin template
+- ReactJS 16+
+- Redux
+- react-hot-reload 4+
+- React router 4
+- react-router-redux 5.x
+- webpack 4+
+- sass
+- jest
+- enzyme
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+### Prerequisite
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Ensure to have NodeJS v6.x MINIMUM.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+or
 
-## Learn More
+```bash
+yarn install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### bundle dev mode
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run dev
+```
 
-### Code Splitting
+### dev : hot reload mode
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Development mode = best dev experience (_hot reload, redux devtools extension..._).
 
-### Analyzing the Bundle Size
+```bash
+npm run start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> Then go to [localhost:3001](http://localhost:3001)
 
-### Making a Progressive Web App
+### bundle production mode
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```bash
+npm run prod
+```
 
-### Advanced Configuration
+### run production
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+In `Development` ReactJS is `not optimized at all` (_you may even find the application to be slow_).
 
-### Deployment
+_ReactJS shows its real power and is `amazing fast` when bundled in `production`._
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+_General case:_
 
-### `npm run build` fails to minify
+```bash
+npm run prod-server
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> Then go to localhost:8081
+
+## What's next
+
+- [ ] get rid of jQuery (_use of react-bootstrap only_)
+- [ ] add react-bootstrap-table
+- [ ] add redux-form
+- [ ] add authentication examples
+- [ ] tests
+- [ ] optimize image import
+
+## Donate
+
+Do you use & like `react-director-admin-template` but you don’t find a way to show some love?
+If yes, please consider donating to support this project. Otherwise, no worries, regardless of whether there is support or not, I will keep maintaining this project. Still, if you buy me a cup of coffee I would be more than happy though 😄
+
+[![Support via PayPal](./assets/Paypal-button.png)](https://www.paypal.me/ErwanDatin/)
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2019 Erwan DATIN
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMacKentoch%2Freact-director-admin-template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMacKentoch%2Freact-director-admin-template?ref=badge_large)
