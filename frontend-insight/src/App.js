@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Button from './components/Button';
 import History from './components/History';
+import YourStocks from './components/YourStocks';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
             <Route path='/testing/burhan'>
               <h2>Burhan</h2>
               <Button id='chart' label='work pls' ></Button>
+              <YourStocks />
             </Route>
 
             {/* Chandni's testing page */}

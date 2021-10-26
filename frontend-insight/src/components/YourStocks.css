@@ -1,7 +1,14 @@
-.yourStocks {
-  height: 80px;
-  width: 100px;
+.stockDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.yourStocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0em;
+  width: 100%;
 }
