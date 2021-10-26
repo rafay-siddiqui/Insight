@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import './Avatar.css';
 import React from 'react';
+import img from "../images/AvatarImage.png";
 
 
 export default function Profile() {
@@ -8,7 +9,7 @@ export default function Profile() {
 
     return (
       <div >
-      <img src="https://koms.korloy.com/resource/lib/ace-admin/assets/avatars/profile-pic.jpg" className="Avatar-border"></img>
+      <img src={img} className="Avatar-border"></img>
       </div>
   );
 }

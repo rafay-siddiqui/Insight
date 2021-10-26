@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import logo from './images/Logo.png';
+
+import logo from './images/2.jpg';
+import background from './images/Background.jpg';
 
 import Button from './components/Button';
 import HistoryItem from './components/HistoryItem';
@@ -33,17 +35,19 @@ class App extends Component {
   render() {
     return (
      
-       
-      <ul className="App">
+      <div styles={{ backgroundImage:"./react-front-end/src/images/Background.jpg" }}>
+      <ul className="App" >
+        <div>
       <img src={logo} className= "App-logo" alt="logo" />
         <Button id="login" onClick={this.fetchData} label="Login" />
         <Button id="nav" onClick={this.fetchData} label="Nav" />
         <Button id="chart" onClick={this.fetchData} label="Chart" />
-        <History></History>
+        </div>
+        <div> <History></History> </div>
         <Avatar/>
-    
         <YourStocks></YourStocks>
       </ul>
+      </div>
     );
   }
 }
