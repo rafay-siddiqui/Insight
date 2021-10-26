@@ -8,7 +8,7 @@ const chalk = require('chalk');
 // #endregion
 
 // #region constants
-const indexRaw = join(__dirname, '../', 'src/front/statics/index-raw.html');
+const indexRaw = join(__dirname, '../', 'src/statics/index-raw.html');
 const destHtml = join(__dirname, '../', 'docs/index.html');
 // #endregion
 

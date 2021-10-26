@@ -13,8 +13,8 @@ const outputPath = path.join(__dirname, 'docs/assets');
 const devServerRootPath = path.join(__dirname, 'docs');
 const publicPath = '/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
-const srcInclude = path.join(__dirname, 'src/front');
-const indexFile = path.join(__dirname, 'src/front/index.js');
+const srcInclude = path.join(__dirname, 'src');
+const indexFile = path.join(__dirname, 'src/index.js');
 // #endregion
 
 const config = {
@@ -24,7 +24,7 @@ const config = {
     app: ['react-hot-loader/patch', indexFile],
   },
   resolve: {
-    modules: ['src/front', 'node_modules'],
+    modules: ['src', 'node_modules'],
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
@@ -74,7 +74,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/front/statics/index.html',
+      template: 'src/statics/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
