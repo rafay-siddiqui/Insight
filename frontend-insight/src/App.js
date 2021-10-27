@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Button from './components/Button';
 import History from './components/History';
 import YourStocks from './components/YourStocks';
+import TabView from './components/TabView';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path='/testing/rafay'>
               <div>
                 <h2>Rafay</h2>
+                <TabView></TabView>
               </div>
             </Route>
 
@@ -55,6 +57,7 @@ function App() {
               <h2>Burhan</h2>
               <Button id='chart' label='work pls' ></Button>
               <YourStocks />
+              <Button chart>work pls</Button>
             </Route>
 
             {/* Chandni's testing page */}

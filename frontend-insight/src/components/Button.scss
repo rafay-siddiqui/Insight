@@ -1,6 +1,6 @@
 .button {
   border: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   height: 2rem;
   line-height: 1.2rem;
   margin-right: 1rem;
@@ -8,28 +8,39 @@
   border-width: 2px;
   border-style: solid;
   border-color: white;
-  color: rgb(197, 56, 56);
+  color: black;
   background-color: transparent;
 }
 
-#login {
+.button--login {
   border-radius: 1rem;
   background-color: lightblue;
   color: white;
 }
 
-#login:hover {
+.button--login:hover {
   background-color: greenyellow;
 }
 
-#nav {
+.button--nav {
   font-size: 2rem;
 }
 
-#chart {
+.button--chart {
   border-color: black;
 }
 
-#chart:hover{
+.button--chart:hover{
   background-color: lightgray;
+}
+
+.button--tab {
+  border-color: black;
+  margin-right: 0;
+  border-color: transparent;
+}
+
+.button--tab:hover {
+  background-color: black;
+  color: white;
 }

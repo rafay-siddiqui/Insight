@@ -1,7 +1,4 @@
 import React from "react";
-
-import './YourStocks.css'
-
 import YourStocksItem from "./YourStocksItem";
 
 export default function YourStocks(props) {
