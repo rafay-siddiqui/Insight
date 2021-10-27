@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -55,9 +56,9 @@ function App() {
             {/* Burhan's testing page */}
             <Route path='/testing/burhan'>
               <h2>Burhan</h2>
-              <Button id='chart' label='work pls' ></Button>
               <YourStocks />
               <Button chart>work pls</Button>
+              <Button login>Login</Button>
             </Route>
 
             {/* Chandni's testing page */}
