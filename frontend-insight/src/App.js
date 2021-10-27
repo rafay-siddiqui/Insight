@@ -4,19 +4,14 @@ import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import tickerSearch from './hooks/useAppData';
 import Button from './components/Button';
 import History from './components/History';
 import YourStocks from './components/YourStocks';
 import TabView from './components/TabView';
 
 function App() {
-  const myApiKey = process.env.REACT_APP_FINANCIAL_MODELING_API
-
-  axios.get(`https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${myApiKey}`)
-  .then(response => {
-    console.log(response)
-  })
-
+  tickerSearch("AAPL", "1hour")
   return (
     <div className="App">
       <Router>
@@ -56,7 +51,6 @@ function App() {
             <Route path='/testing/rafay'>
               <div>
                 <h2>Rafay</h2>
-                <h2> {myApiKey} </h2>
                 <TabView></TabView>
               </div>
             </Route>
