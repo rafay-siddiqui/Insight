@@ -10,7 +10,7 @@ import YourStocks from './components/YourStocks';
 import TabView from './components/TabView';
 
 function App() {
-  const myApiKey = process.env.REACT_APP_YOUR_API_KEY_NAME
+  const myApiKey = process.env.REACT_APP_FINANCIAL_MODELING_API
 
   axios.get(`https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${myApiKey}`)
   .then(response => {
