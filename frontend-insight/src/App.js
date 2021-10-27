@@ -10,6 +10,13 @@ import YourStocks from './components/YourStocks';
 import TabView from './components/TabView';
 
 function App() {
+  const myApiKey = process.env.REACT_APP_YOUR_API_KEY_NAME
+
+  axios.get(`https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${myApiKey}`)
+  .then(response => {
+    console.log(response)
+  })
+
   return (
     <div className="App">
       <Router>
@@ -49,6 +56,7 @@ function App() {
             <Route path='/testing/rafay'>
               <div>
                 <h2>Rafay</h2>
+                <h2> {myApiKey} </h2>
                 <TabView></TabView>
               </div>
             </Route>
