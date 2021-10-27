@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Button from './components/Button';
 import History from './components/History';
+import YourStocks from './components/YourStocks';
 import TabView from './components/TabView';
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
             {/* Burhan's testing page */}
             <Route path='/testing/burhan'>
               <h2>Burhan</h2>
+              <Button id='chart' label='work pls' ></Button>
+              <YourStocks />
               <Button chart>work pls</Button>
             </Route>
 

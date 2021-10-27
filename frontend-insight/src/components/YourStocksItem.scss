@@ -1,6 +1,6 @@
 .yourStocksItem {
   height: 3rem;
-  width: 150px;
+  width: 100%;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -9,7 +9,6 @@
   font-size: .75rem;
   color: black;
   border: 1px solid black;
-  margin-left: 1em;
 }
 
 .stock {
