@@ -1,42 +1,65 @@
-import React from 'react';
-import {Nav, NavbarContainer, NavLogo, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
+import React from "react";
+import {
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  NavMenu,
+  NavItem,
+  NavLinks,
+//  NavBtn,
+ // NavBtnLink,
+} from "./NavbarElements";
 import logo from "../../images/logo-nobg.png";
 
+
+import {useContext } from "react";
+import { authContext } from "../../providers/AuthProvider";
+//import Button from "../Button";
+import LoginInfo from "../LoginInfo";
+import Login from "../Login";
+
+
 function Navbar() {
-    return (
-    <>
-        <Nav>
-            <NavbarContainer>
-                <NavLogo to="/">
-                <img src={logo} height="200" width="200" padding="24px" alt=""  ></img>INSIGHT
-                </NavLogo>
-                
-               <NavMenu>
-                   
-               <NavItem>
-                <NavLinks to="Portfolio">Portfolio</NavLinks>
-                </NavItem>
+    const { auth } = useContext(authContext);
+  return (
+  
 
-                <NavItem>
-                <NavLinks to="Model">Model</NavLinks>
-                </NavItem>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">
+            <img
+              src={logo}
+              height="100"
+              width="100"
+              padding="24px"
+              alt=""
+            ></img>{" "}
+            INSIGHT
+          </NavLogo>
 
-               
-                <NavItem>
-                <NavLinks to="about">About</NavLinks>
-                </NavItem>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="/portfolio">Portfolio</NavLinks>
+            </NavItem>
 
-                <NavItem>
-                <NavLinks to="Register">Get Started</NavLinks>
-                </NavItem>
-                </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to="/SingIn">SignIn</NavBtnLink>
-                </NavBtn>
-            </NavbarContainer>
-        </Nav>
-    </>
-    );
-};
+            <NavItem>
+              <NavLinks to="/stock">Stock</NavLinks>
+            </NavItem>
+
+            <NavItem>
+              <NavLinks to="about">About</NavLinks>
+            </NavItem>
+            <NavItem>
+           
+           </NavItem>
+          </NavMenu>
+              {!auth && <Login />}
+              {auth && <LoginInfo />}
+ 
+          </NavbarContainer>
+      </Nav>
+  
+  );
+}
 
 export default Navbar;

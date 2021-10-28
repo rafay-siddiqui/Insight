@@ -1,13 +1,13 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
-
-import Navbar from '../components/Navbar';
 
 function Home() {
     return (
         <>
-        <Navbar/>
         <HeaderSection/>
+        <login></login>
+        <Footer/>
         </>
     )
 }

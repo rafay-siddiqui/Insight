@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.scss";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages";
-import PortfolioPage from "./pages";
-import StockPage from "./pages";
+import PortfolioPage from "./pages/Portfolio";
+import StockPage from "./pages/Stock";
+import Navbar from "./components/Navbar";
 
 
 function App() {
@@ -13,11 +14,12 @@ function App() {
   return (
     <div >
       <Router>
-      <switch>
+      <Navbar/>
+      <Switch>
+        <Route path="/portfolio" component={PortfolioPage} exact />
+        <Route path="/stock" component={StockPage} exact />
         <Route path="/" component={Home} exact />
-        <Route path="/PortfolioPage" component={PortfolioPage} exact />
-        <Route path="/StockPage" component={StockPage} exact />
-      </switch>          
+      </Switch>          
     
       </Router>
     </div>

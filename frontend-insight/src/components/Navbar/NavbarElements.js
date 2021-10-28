@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import {Link as LinkR} from "react-router-dom";
-import {Link as LinkS} from 'react-scroll';
+
 
 export const Nav = styled.nav`
 background: #000;
-Height: 80px;
+Height: 100px;
+padding-top:20px;
 /* Margin-top: -80px; */
 display: flex;
 justify-content: center;
@@ -22,8 +23,8 @@ justify-content: space-between;
 height: 80px;
 z-index: 1;
 width: 100%;
-padding: 0 24px;
-max-width: 1100px;
+padding: 24px 24px;
+max-width: 1200px;
 `;
 export const NavLogo = styled(LinkR)`
 color: #FFF;
@@ -58,7 +59,7 @@ export const NavItem = styled.li`
 height: 80px;
 `;
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(LinkR)`
 color: #fff;
 display: flex;
 align-item: center;
@@ -85,22 +86,3 @@ align-item: center;
 }
 `;
 
-export const NavBtnLink = styled(LinkR)`
-border-radius:20px;
-background : #D7b546;
-white-space: nowrap;
-padding : 10px 26px;
-color: #010606;
-font-size:16px;
-outline:none;
-boarder: none;
-cursor: pointer;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
-
-&:hover{
-    transition: all 0.2s ease-in-out;
-    background : #fff;
-    color: #010606;
-}
-`;
