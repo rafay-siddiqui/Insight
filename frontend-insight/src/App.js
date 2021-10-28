@@ -3,8 +3,6 @@ import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import {ApiDataProvider} from './providers/ApiDataProvider';
-
 import Button from './components/Button';
 import History from './components/History';
 import YourStocks from './components/YourStocks';
@@ -14,7 +12,6 @@ import TickerPage from './views/TickerPage';
 function App() {
   return (
     <div className="App">
-      <ApiDataProvider>
         <Router>
           <div>
             <nav>
@@ -73,7 +70,6 @@ function App() {
             </Switch>
           </div>
         </Router>
-      </ApiDataProvider>
     </div>
   );
 }
