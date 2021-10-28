@@ -1,5 +1,6 @@
 import React from "react";
 import "./Button.scss"
+
 import classNames from 'classnames';
 
 export default function Button(props) {
@@ -9,6 +10,7 @@ export default function Button(props) {
     'button--chart': props.chart,
     'button--nav': props.nav,
     'button--tab': props.tab,
+    'button--signup': props.signup,
   });
 
   return (
