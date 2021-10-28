@@ -17,9 +17,10 @@ import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Rafay
-import ExampleChart2 from "./views/ExampleChart";
-import './styles/tempAppStyles.scss'
 import TickerLookup from "./views/TickerLookup";
+import Portfolio from "./views/Portfolio";
+
+//Ticker Hyperlink
 
 function App() {
   return (
@@ -64,16 +65,9 @@ function App() {
                 <TabView></TabView>
               </div>
 
-              <div className='portfolioDiv'>
+              <div style={{ display: "flex" }} className='portfolioDiv'>
 
-                <div className="portfolioDiv--left">
-                  <h2>Portfolio</h2>
-                  <div className="portfolioDiv--row1">
-                    <ExampleChart2></ExampleChart2>
-                    <YourStocks></YourStocks>
-                  </div>
-                  <History></History>
-                </div>
+                {/* <Portfolio></Portfolio> */}
 
                 <TickerLookup></TickerLookup>
 
@@ -105,8 +99,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-      </div>
-      );
+    </div>
+  );
 }
 
-      export default App;
+export default App;

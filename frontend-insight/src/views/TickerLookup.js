@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import TickerSearchBar from "../components/TickerSearchBar";
-import searchTicker from "../helper/fetchers";
+import { searchTicker, hyperlinkTicker } from "../helper/fetchers";
 import TickerResult from "../components/TickerResult"
 import './TickerLookup.scss'
 
 // import { LineChart, Line } from 'recharts';
 
-export default function TickerResultsPage(props) {
+export default function TickerLookup(props) {
+
   const [ticker, setTicker] = useState("")
   const [results, setResults] = useState([])
 
@@ -25,7 +26,7 @@ export default function TickerResultsPage(props) {
         <h2>Results</h2>
         {/* Iterate similar ticker results from API */}
         {results.map(result => (
-          <TickerResult ticker={result.symbol} company={result.name} />
+          <TickerResult onClick={ () => {hyperlinkTicker(result.symbol)}} ticker={result.symbol} company={result.name} />
         ))}
       </div>
 

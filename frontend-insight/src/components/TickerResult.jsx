@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from './Button'
 
 export default function TickerResult(props) {
 
   return (
-    <h2>{props.ticker} {props.company}</h2>
+    <Button chart onClick={props.onClick} >{props.ticker} {props.company}</Button>
   )
 }
