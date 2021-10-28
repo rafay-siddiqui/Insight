@@ -8,6 +8,7 @@ import Button from "./components/Button";
 import History from "./components/History";
 import YourStocks from "./components/YourStocks";
 import TabView from "./components/TabView";
+import TickerPage from './views/TickerPage';
 
 //Chandni
 import Header from "./components/Header";
@@ -54,9 +55,10 @@ function App() {
               </div>
             </Route>
 
-            <Route path="/stock/quote">
+            <Route path='/stock/quote'>
               <div>
                 <h2>Stocks</h2>
+                <TickerPage />
               </div>
             </Route>
 
@@ -69,14 +71,14 @@ function App() {
 
               <div className='portfolioDiv'>
 
-                  <div className="portfolioDiv--left">
+                <div className="portfolioDiv--left">
                   <h2>Portfolio</h2>
-                    <div className="portfolioDiv--row1">
-                      <ExampleChart2></ExampleChart2>
-                      <YourStocks></YourStocks>
-                    </div>
-                    <History></History>
+                  <div className="portfolioDiv--row1">
+                    <ExampleChart2></ExampleChart2>
+                    <YourStocks></YourStocks>
                   </div>
+                  <History></History>
+                </div>
 
                 <TickerLookup></TickerLookup>
 
@@ -108,8 +110,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </div>
-  );
+      </div>
+      );
 }
 
-export default App;
+      export default App;
