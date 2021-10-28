@@ -1,0 +1,21 @@
+.tickerLookup {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.tickerSearchBar {
+  width: 250px;
+}
+
+.tickerResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: inherit;
+  padding: 0.5rem;
+  width: 90%;
+}

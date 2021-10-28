@@ -16,6 +16,8 @@
   border-radius: 1rem;
   background-color: lightblue;
   color: white;
+  width: 5rem;
+  margin-left: 0.5rem;
 }
 
 .button--login:hover {
@@ -43,4 +45,8 @@
 .button--tab:hover {
   background-color: black;
   color: white;
+}
+
+.button--insight {
+  font-size: 3rem;
 }

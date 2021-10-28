@@ -7,9 +7,9 @@ export default function TabView(props) {
 
   return (
     <div className='tabView'>
-      <Button tab>Tab 1</Button>
-      <Button tab>Tab 2</Button>
-      <Button tab>Tab 3</Button>
+      <Button tab>Insight</Button>
+      <Button tab>Explore</Button>
+      <Button tab>Forecast</Button>
     </div>
   )
 }

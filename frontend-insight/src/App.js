@@ -17,10 +17,12 @@ import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
 //Chandni
 import tickerSearch from './hooks/useAppData';
-import Button from './components/Button';
-import History from './components/History';
-import YourStocks from './components/YourStocks';
-import TabView from './components/TabView';
+
+//Rafay
+import ExampleChart from "./views/ExampleChart";
+import ExampleChart2 from "./views/ExampleChart2";
+import './styles/tempAppStyles.scss'
+import TickerLookup from "./components/TickerLookup";
 
 function App() {
   tickerSearch("AAPL", "1hour")
@@ -60,9 +62,24 @@ function App() {
 
             {/* Rafay's testing page */}
             <Route path="/testing/rafay">
+
               <div>
-                <h2>Rafay</h2>
                 <TabView></TabView>
+              </div>
+
+              <div className='portfolioDiv'>
+
+                  <div className="portfolioDiv--left">
+                  <h2>Portfolio</h2>
+                    <div className="portfolioDiv--row1">
+                      <ExampleChart2></ExampleChart2>
+                      <YourStocks></YourStocks>
+                    </div>
+                    <History></History>
+                  </div>
+
+                <TickerLookup></TickerLookup>
+
               </div>
             </Route>
 
@@ -82,7 +99,7 @@ function App() {
                 <Header></Header>
                 <div>
                   <ul className="App">
-                   <Avatar />
+                    <Avatar />
                   </ul>
                 </div>
                 <Footer></Footer>

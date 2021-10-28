@@ -3,11 +3,11 @@ import './HistoryItem.scss'
 
 export default function HistoryItem(props) {
   return (
-    <li id={props.id} className="historyItem" >
+    <div id={props.id} className="historyItem" >
       <h2 className={props.infoClass}>{props.stock}</h2>
       <h2 className={props.infoClass}>{props.holdings}</h2>
       <h2 className={props.infoClass}>{props.price}</h2>
       <h2 className={props.infoClass}>{props.change}</h2>
-    </li>
+    </div>
   )
 }

@@ -9,6 +9,7 @@ export default function Button(props) {
     'button--chart': props.chart,
     'button--nav': props.nav,
     'button--tab': props.tab,
+    'button--inisght': props.insight,
   });
 
   return (
