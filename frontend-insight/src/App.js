@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.scss";
-import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -18,7 +17,6 @@ import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Rafay
-import ExampleChart from "./views/ExampleChart";
 import ExampleChart2 from "./views/ExampleChart2";
 import './styles/tempAppStyles.scss'
 import TickerLookup from "./views/TickerLookup";
