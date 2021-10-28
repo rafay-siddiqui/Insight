@@ -25,7 +25,7 @@ import './styles/tempAppStyles.scss'
 import TickerLookup from "./components/TickerLookup";
 
 function App() {
-  tickerSearch("AAPL", "1hour")
+  // tickerSearch("AAPL", "1hour")
   return (
     <div >
       <Router>
