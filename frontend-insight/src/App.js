@@ -8,7 +8,7 @@ import Button from "./components/Button";
 import History from "./components/History";
 import YourStocks from "./components/YourStocks";
 import TabView from "./components/TabView";
-import TickerPage from './views/TickerPage';
+import TickerPage from './views/TickerLookup';
 
 //Chandni
 import Header from "./components/Header";
@@ -21,10 +21,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ExampleChart from "./views/ExampleChart";
 import ExampleChart2 from "./views/ExampleChart2";
 import './styles/tempAppStyles.scss'
-import TickerLookup from "./components/TickerLookup";
+import TickerLookup from "./views/TickerLookup";
 
 function App() {
-  // tickerSearch("AAPL", "1hour")
   return (
     <div >
       <Router>
