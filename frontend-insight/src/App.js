@@ -1,17 +1,15 @@
 import React from 'react';
 import './App.scss';
-import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import tickerSearch from './hooks/useAppData';
 import Button from './components/Button';
 import History from './components/History';
 import YourStocks from './components/YourStocks';
 import TabView from './components/TabView';
+import TickerPage from './views/TickerPage';
 
 function App() {
-  tickerSearch("AAPL", "1hour")
   return (
     <div className="App">
       <Router>
@@ -44,6 +42,7 @@ function App() {
             <Route path='/stock/quote'>
               <div>
                 <h2>Stocks</h2>
+                <TickerPage/>
               </div>
             </Route>
 
