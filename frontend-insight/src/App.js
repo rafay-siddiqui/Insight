@@ -17,7 +17,7 @@ import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Rafay
-import ExampleChart2 from "./views/ExampleChart2";
+import ExampleChart2 from "./views/ExampleChart";
 import './styles/tempAppStyles.scss'
 import TickerLookup from "./views/TickerLookup";
 
