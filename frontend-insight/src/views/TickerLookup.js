@@ -4,8 +4,6 @@ import { searchTicker, hyperlinkTicker } from "../helper/fetchers";
 import TickerResult from "../components/TickerResult"
 import './TickerLookup.scss'
 
-// import { LineChart, Line } from 'recharts';
-
 export default function TickerLookup(props) {
 
   const [ticker, setTicker] = useState("")
@@ -26,7 +24,7 @@ export default function TickerLookup(props) {
         <h2>Results</h2>
         {/* Iterate similar ticker results from API */}
         {results.map(result => (
-          <TickerResult onClick={ () => {hyperlinkTicker(result.symbol)}} ticker={result.symbol} company={result.name} />
+          <TickerResult onClick={ () => {props.onClick(result.symbol)}} ticker={result.symbol} company={result.name} />
         ))}
       </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import "./App.scss";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -19,10 +19,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Rafay
 import TickerLookup from "./views/TickerLookup";
 import Portfolio from "./views/Portfolio";
+import StockQuote from './views/StockQuote'
 
-//Ticker Hyperlink
 
 function App() {
+
+  const [displayStock, setDisplayStock] = useState('');
+
+  // const showStock = (ticker) => {
+
+  //   hyperlinkTicker(ticker)
+  //     .then((res) => setResults(res)
+  //     )
+  // }
+
   return (
     <div >
       <Router>
@@ -67,9 +77,11 @@ function App() {
 
               <div style={{ display: "flex" }} className='portfolioDiv'>
 
+                <StockQuote ticker={displayStock} />
                 {/* <Portfolio></Portfolio> */}
 
-                <TickerLookup></TickerLookup>
+
+                <TickerLookup onClick={setDisplayStock} ></TickerLookup>
 
               </div>
             </Route>
