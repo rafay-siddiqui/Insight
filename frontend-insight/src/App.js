@@ -3,11 +3,10 @@ import "./App.scss";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Button from "./components/Button";
 import History from "./components/History";
-import YourStocks from "./components/YourStocks";
 import TabView from "./components/TabView";
 import TickerPage from './views/TickerLookup';
+import MainView from "./views/mainView";
 
 //Chandni
 import Header from "./components/Header";
@@ -18,21 +17,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Chandni
 
 //Rafay
-import TickerLookup from "./views/TickerLookup";
 import Portfolio from "./views/Portfolio";
-import StockQuote from './views/StockQuote'
 
 
 function App() {
-
-  const [displayStock, setDisplayStock] = useState('');
-
-  // const showStock = (ticker) => {
-
-  //   hyperlinkTicker(ticker)
-  //     .then((res) => setResults(res)
-  //     )
-  // }
 
   return (
     <div >
@@ -63,10 +51,7 @@ function App() {
             </Route>
 
             <Route path='/stock/quote'>
-              <div>
-                <h2>Stocks</h2>
-                <TickerPage />
-              </div>
+              <MainView />
             </Route>
 
             {/* Rafay's testing page */}
@@ -78,22 +63,16 @@ function App() {
 
               <div style={{ display: "flex" }} className='portfolioDiv'>
 
-                <StockQuote ticker={displayStock} />
-                {/* <Portfolio></Portfolio> */}
+                {/* <StockQuote data={displayStock} /> */}
+                <Portfolio></Portfolio>
 
 
-                <TickerLookup onClick={setDisplayStock} ></TickerLookup>
+                {/* <TickerLookup onClick={showStock} ></TickerLookup> */}
 
               </div>
             </Route>
 
             {/* Burhan's testing page */}
-            <Route path="/testing/burhan">
-              <h2>Burhan</h2>
-              <YourStocks />
-              <Button chart>work pls</Button>
-              <Button login>Login</Button>
-            </Route>
 
             {/* Chandni's testing page */}
 
