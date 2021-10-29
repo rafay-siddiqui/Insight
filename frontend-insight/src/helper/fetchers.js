@@ -13,8 +13,8 @@ function searchTicker(ticker) {
 // }
 
 function hyperlinkTicker(ticker) {
-  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=5&apikey=${myApiKey}`)
-    .then((res) => (res.data))
+  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=100&apikey=${myApiKey}`)
+    .then((res) => res.data)
 }
 
 // function hyperlinkTicker(ticker) {
