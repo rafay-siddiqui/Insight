@@ -1,6 +1,5 @@
-import React from "react";
+import { React, useState } from "react";
 import "./App.scss";
-import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ import Button from "./components/Button";
 import History from "./components/History";
 import YourStocks from "./components/YourStocks";
 import TabView from "./components/TabView";
-import TickerPage from './views/TickerPage';
+import TickerPage from './views/TickerLookup';
 
 //Chandni
 import Header from "./components/Header";
@@ -16,16 +15,28 @@ import Footer from "./components/Footer";
 
 import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
 //Chandni
+=======
+>>>>>>> 035181889595f6dd6c66f48216da2bcbb1f32e58
 
 //Rafay
-import ExampleChart from "./views/ExampleChart";
-import ExampleChart2 from "./views/ExampleChart2";
-import './styles/tempAppStyles.scss'
-import TickerLookup from "./components/TickerLookup";
+import TickerLookup from "./views/TickerLookup";
+import Portfolio from "./views/Portfolio";
+import StockQuote from './views/StockQuote'
+
 
 function App() {
-  // tickerSearch("AAPL", "1hour")
+
+  const [displayStock, setDisplayStock] = useState('');
+
+  // const showStock = (ticker) => {
+
+  //   hyperlinkTicker(ticker)
+  //     .then((res) => setResults(res)
+  //     )
+  // }
+
   return (
     <div >
       <Router>
@@ -68,18 +79,13 @@ function App() {
                 <TabView></TabView>
               </div>
 
-              <div className='portfolioDiv'>
+              <div style={{ display: "flex" }} className='portfolioDiv'>
 
-                <div className="portfolioDiv--left">
-                  <h2>Portfolio</h2>
-                  <div className="portfolioDiv--row1">
-                    <ExampleChart2></ExampleChart2>
-                    <YourStocks></YourStocks>
-                  </div>
-                  <History></History>
-                </div>
+                <StockQuote ticker={displayStock} />
+                {/* <Portfolio></Portfolio> */}
 
-                <TickerLookup></TickerLookup>
+
+                <TickerLookup onClick={setDisplayStock} ></TickerLookup>
 
               </div>
             </Route>
@@ -109,8 +115,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-      </div>
-      );
+    </div>
+  );
 }
 
-      export default App;
+export default App;

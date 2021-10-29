@@ -2,9 +2,27 @@ import axios from "axios";
 
 const myApiKey = process.env.REACT_APP_FINANCIAL_MODELING_API
 
-export default function searchTicker(ticker) {
-  return axios.get(`https://financialmodelingprep.com/api/v3/search?query=${ticker.toUpperCase()}&limit=100&apikey=${myApiKey}`)
+function searchTicker(ticker) {
+  return axios.get(`https://financialmodelingprep.com/api/v3/search?query=${ticker.toUpperCase()}&limit=10&apikey=${myApiKey}`)
     .then((res) => res.data)
 }
 
-// 
+// function hyperlinkTicker(ticker) {
+//   return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?serietype=line&apikey=${myApiKey}`)
+//     .then((res) => (res.data))
+// }
+
+function hyperlinkTicker(ticker) {
+  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=5&apikey=${myApiKey}`)
+    .then((res) => (res.data))
+}
+
+// function hyperlinkTicker(ticker) {
+//   return axios.get(`https://financialmodelingprep.com/api/v3/historical-chart/1min/${ticker}?apikey=${myApiKey}`)
+//     .then((res) => res.data)
+// }
+
+
+
+export { searchTicker, hyperlinkTicker };
+
