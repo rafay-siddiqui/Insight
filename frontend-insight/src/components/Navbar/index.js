@@ -21,7 +21,6 @@ function Navbar() {
           <img src={logo} height="100" width="100" padding="24px" alt=""></img>{" "}
           INSIGHT
         </NavLogo>
-
         <NavMenu>
           <NavItem>
             <NavLinks to="/portfolio">Portfolio</NavLinks>

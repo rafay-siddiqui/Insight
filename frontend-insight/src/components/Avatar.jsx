@@ -1,7 +1,7 @@
 
 import './Avatar.scss';
 import React from 'react';
-import img from "../images/Jhon.png";
+import img from "../images/Profile.jpg";
 
 import { useContext } from 'react';
 import { authContext } from '../providers/AuthProvider';
@@ -11,7 +11,7 @@ export default function Avatar() {
   const { user, logout } = useContext(authContext);
 
     return (
-      <div >
+      <div className="action">
       <img src={img} className="Avatar-border" role="button"></img>
         <a href="#" onClick={logout}> logout </a>
        
