@@ -43,12 +43,37 @@ text-decoration: none;
 
 `;
 
+export const NavLogoHome = styled(LinkR)`
+color: #FFF;
+justify-self: Flex-start;
+Background : #000;
+cursor: pointer;
+font-size: 2.5rem;
+text-align: Center;
+display: flex;
+align-items : center;
+justify-content: center; 
+Margine-left: 24px;
+font-weight: bold;
+text-decoration: none;
+overflow: hidden;
+
+
+
+
+&:hover{
+    transition: all 0.2s ease-in-out;
+  
+    color: #ffd700;
+
+`;
+
 export const NavMenu = styled.ul`
 display: flex;
 align-items: center;
 List-style: none;
 text-align: center;
-Margine-right: -22px;
+Margine-right: 50px;
 
 @media screen and (max-width:768px){
     display: none;
@@ -77,6 +102,8 @@ cursor: pointer;
   
     color: #ffd700;
 `;
+
+
 
 export const NavBtn = styled.nav`
 display: flex;

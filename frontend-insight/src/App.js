@@ -14,7 +14,7 @@ function App() {
   return (
     <div >
       <Router>
-      <Navbar/>
+     
       <Switch>
         <Route path="/portfolio" component={PortfolioPage} exact />
         <Route path="/stock" component={StockPage} exact />
