@@ -15,10 +15,7 @@ import Footer from "./components/Footer";
 
 import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< HEAD
 //Chandni
-=======
->>>>>>> 035181889595f6dd6c66f48216da2bcbb1f32e58
 
 //Rafay
 import TickerLookup from "./views/TickerLookup";
