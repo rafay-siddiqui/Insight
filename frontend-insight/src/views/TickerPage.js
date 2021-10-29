@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import TickerSearchBar from "../components/TickerSearchBar";
 import searchTicker from "../helper/fetchers";
 
 // import { LineChart, Line } from 'recharts';
 
-export default function TickerPage(props) {
+export default function TickerResults(props) {
   const [ticker, setTicker] = useState("")
   const [chart, setChart] = useState([])
 

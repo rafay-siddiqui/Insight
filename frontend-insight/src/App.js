@@ -17,7 +17,6 @@ import Footer from "./components/Footer";
 import Avatar from "./components/Avatar";
 import "bootstrap/dist/css/bootstrap.min.css";
 //Chandni
-import tickerSearch from './hooks/useAppData';
 
 //Rafay
 import ExampleChart from "./views/ExampleChart";
