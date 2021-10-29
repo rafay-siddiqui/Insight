@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { authContext } from "../providers/AuthProvider";
 import Button from "./Button";
 import "./login.css";
+import 'font-awesome/css/font-awesome.min.css';
 
 export default function Login() {
   const [email, setEmail] = useState("");

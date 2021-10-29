@@ -12,8 +12,16 @@ export default function Avatar() {
 
     return (
       <div >
-      <img src={img} className="Avatar-border"></img>
+      <img src={img} className="Avatar-border" role="button"></img>
         <a href="#" onClick={logout}> logout </a>
-      </div>
+       
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+  <a href="#" onClick={logout}> logout </a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+      
   );
 }

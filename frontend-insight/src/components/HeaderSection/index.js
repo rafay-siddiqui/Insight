@@ -1,9 +1,8 @@
 import React from "react";
 import Video from "../../videos/video.mp4";
 import Button from "../Button";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Login from "../Login";
-import { useContext } from "react";
 import { authContext } from "../../providers/AuthProvider";
 
 import LoginInfo from "../../components/LoginInfo";
@@ -42,7 +41,7 @@ function HeaderSection() {
           <br />
           <br />
 
-          <HeaderH1> Let The Money Work For You</HeaderH1>
+          <HeaderH1> Let The Money Work For You !!</HeaderH1>
           {/*<HeaderP>
             Join Us Today to Make Smart Investments and Receive Stocks worth of
             $100 for FREE!!

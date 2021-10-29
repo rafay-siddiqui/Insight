@@ -35,6 +35,7 @@ export const HeaderContent=styled.div`
 z-index: 1;
 max-width: 500px;
 position: relative;
+margin-left:60px;
 padding: 8px 24px;
 display: flex;
 flex-direction: column;
@@ -44,7 +45,7 @@ export const HeaderContentRight=styled.div`
 z-index: 1;
 max-width: 500px;
 padding: 8px 24px;
-margin-left: 300px;
+margin-left: 200px;
 flex-direction: row;
 position: relative;
 align-items: center;
