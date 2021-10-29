@@ -1,14 +1,12 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-class Footer extends React.Component
-{
-  render()
-  {
-    return (
-        <div class="jumbotron text-center">
-        <p>Footer</p>
-      </div>
-    )
-  }
+
+import './footer.css';
+
+
+export default function Footer() {
+    
+  return (
+    <div class="footer"> Aurthor : Burhan, Rafay, Chandni
+    </div>
+);
 }
-export default Footer;
