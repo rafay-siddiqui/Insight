@@ -16,14 +16,14 @@ export default function LoginInfo() {
     <div>
       <>
       <Redirect to='/portfolio'  />
-      <Avatar/>
-        <div>You are logged in</div>
+      
+      {/*  <div>You are logged in</div>
         <div color ="white">Email: {user.email}</div>
         <div>Name: {user.name}</div>
         <div>UserId: {user.id}</div>
         <Button onClick={logout}>
                  logout
-                </Button>
+      </Button> */}
       </ >
      
 
