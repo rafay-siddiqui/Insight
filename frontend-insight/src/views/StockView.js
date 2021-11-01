@@ -4,7 +4,7 @@ import StockQuote from "./StockQuote";
 import { hyperlinkTicker } from "../helper/fetchers";
 
 
-export default function MainView() {
+export default function StockView() {
   const [displayStock, setDisplayStock] = useState('');
 
   const showStock = (ticker) => {

@@ -15,18 +15,18 @@ import {
   NavMenu,
   NavItem,
 } from "../components/Navbar/NavbarElements";
-import MainView from "../views/mainView";
+import StockView from "../views/StockView";
 import Portfolio from "../views/Portfolio";
 
-function PortfolioPage() {
+function PortfolioPage(props) {
   const { auth } = useContext(authContext);
   return (
     <div>
       {!auth && <Redirect to="/" />}
       {auth && <Redirect to="/portfolio" />}
       {auth && <LoginInfo />}
-      <Navbar></Navbar>
-      <MainView />
+      <Navbar balance={props.balance} addBalance={props.addBalance} />
+      <StockView />
       <Portfolio></Portfolio>
     </div>
   );

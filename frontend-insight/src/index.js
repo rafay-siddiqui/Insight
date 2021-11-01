@@ -7,7 +7,7 @@ import AuthProvider from './providers/AuthProvider';
 
 ReactDOM.render(
   <AuthProvider>
-    <App />
+    <App/>
     </AuthProvider>,
   document.getElementById('root')
 );

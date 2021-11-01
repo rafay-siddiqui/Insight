@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Balance(props) {
+export default function AddBalance(props) {
   const [amount, setAmount] = useState()
   return (
     <div>
@@ -22,5 +22,3 @@ function Balance(props) {
     </div>
   );
 }
-
-export default Balance;

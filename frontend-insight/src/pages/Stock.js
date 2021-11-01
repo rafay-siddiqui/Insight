@@ -5,19 +5,15 @@ import LoginInfo from "../components/LoginInfo";
 import { authContext } from "../providers/AuthProvider";
 import Login from "../components/Login";
 import { useState, useContext } from "react";
-import MainView from "../views/mainView";
+import StockView from "../views/StockView";
 
-function StockPage() {
+function StockPage(props) {
   const { auth } = useContext(authContext);
   return (
     <div>
-      <Navbar>
-        {!auth && <Login />}
-        {auth && <LoginInfo />}
-      </Navbar>
-
+      <Navbar balance={props.balance} addBalance={props.addBalance} />
       <h1>Stock</h1>
-      <MainView/>
+      <StockView/>
     </div>
   );
 }
