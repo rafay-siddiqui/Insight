@@ -12,8 +12,12 @@ import {
 import logo from "../../images/logo-nobg.png";
 
 import { useContext } from "react";
+import { useBalance } from "../../api";
 
 function Navbar() {
+
+  const balanceQuery = useBalance();
+  console.log(balanceQuery);
   return (
     <Nav>
       <NavbarContainer>
