@@ -24,12 +24,9 @@ function PortfolioPage() {
     <div>
       {!auth && <Redirect to="/" />}
       {auth && <Redirect to="/portfolio" />}
-
       {auth && <LoginInfo />}
-
       <Navbar></Navbar>
       <MainView />
-
       <Portfolio></Portfolio>
     </div>
   );

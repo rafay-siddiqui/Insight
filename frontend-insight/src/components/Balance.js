@@ -1,29 +1,26 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-function Balance() {
-const [amount,setamount]=useState(200);
-showForm = () => {
-    return (
-      <div> 
-    <form>
-      <label>Add the $ Amount:
-        <input
-          type="text" 
-          value={amount}
-          onChange={(e) => setamount(e.target.value)}
-        />
-      </label>
-          <button>Create</button>
-       </form>
-       </div>
-      );
-  }    
-
-return (
-        <div>
-        
-        </div>
-    )
+function Balance(props) {
+  const [amount, setAmount] = useState()
+  return (
+    <div>
+      <form>
+        <label>
+          Add the $ Amount:
+          <input
+            type="text"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+        </label>
+        <button onClick={(event) => {
+          event.preventDefault();
+          props.addBalance(amount);
+          setAmount("");
+        }}>Add</button>
+      </form>
+    </div>
+  );
 }
 
-export default Balance
+export default Balance;

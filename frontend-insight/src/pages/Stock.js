@@ -5,6 +5,7 @@ import LoginInfo from "../components/LoginInfo";
 import { authContext } from "../providers/AuthProvider";
 import Login from "../components/Login";
 import { useState, useContext } from "react";
+import MainView from "../views/mainView";
 
 function StockPage() {
   const { auth } = useContext(authContext);
@@ -16,6 +17,7 @@ function StockPage() {
       </Navbar>
 
       <h1>Stock</h1>
+      <MainView/>
     </div>
   );
 }
