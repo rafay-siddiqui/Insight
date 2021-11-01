@@ -6,13 +6,10 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
-  NavBtn,
-  NavBtnLink,
   BalShow,
 } from "./NavbarElements";
 import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
-import { useContext } from "react";
 import { useBalance } from "../../api";
 
 function Navbar() {
