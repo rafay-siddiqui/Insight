@@ -10,7 +10,7 @@ export default function AuthProvider(props) {
   const login = function (email, password) {
     setAuth(true);
     const id = "1234-1234-1234";  // Some random userId
-    setUser({ email, id, name: "Test User" });
+    setUser("Elon");
   };
 
   const logout = function () {

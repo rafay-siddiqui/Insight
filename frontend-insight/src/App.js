@@ -9,8 +9,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 const queryClient = new QueryClient()
 
 function App() {
-  //Should throw these database query functions into their own file later
-  //Should use proxy so url is not hardcoded
+  const [balanceVal, setBalanceVal] = useState(0);
+
+  const balanceSetter = (amount) => {
+    setBalanceVal(prevState => prevState + parseInt(amount))
+  }
   const [users, setUsers] = useState(false);
   useEffect(() => {
     getUser();
@@ -70,8 +73,12 @@ function App() {
 
         <Router>
           <Switch>
-            <Route path="/portfolio" component={PortfolioPage} exact />
-            <Route path="/stock" component={StockPage} exact />
+            <Route path="/portfolio" exact>
+              <PortfolioPage balance={balanceVal} addBalance={balanceSetter} />
+            </Route>
+            <Route path="/stock" exact>
+              <StockPage balance={balanceVal} addBalance={balanceSetter} />
+            </Route>
             <Route path="/" component={Home} exact />
             <Route path="/rafay" exact />
           </Switch>

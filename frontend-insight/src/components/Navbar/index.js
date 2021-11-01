@@ -10,24 +10,15 @@ import {
 } from "./NavbarElements";
 import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
-import { useBalance } from "../../api";
 
-function Navbar() {
 
-  const [balanceVal, setBalanceVal] = useState(200);
-
-  const balanceSetter = (amount) => {
-    setBalanceVal(prevState => prevState + parseInt(amount))
-  }
+function Navbar(props) {
   const sticky = {
 
     position: "fixed",
     top: "0",
     width: "100%"
   };
-
-  const balanceQuery = useBalance();
-  console.log(balanceQuery);
   return (
     <Nav style={sticky}>
       <NavbarContainer>
@@ -48,9 +39,9 @@ function Navbar() {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
 
-          <BalShow>Balance: {balanceVal} </BalShow>
+          {props.balance && <BalShow>Balance: {props.balance} </BalShow>}
 
-          <Avatar addBalance={balanceSetter} />
+          <Avatar addBalance={props.addBalance} />
         </NavMenu>
       </NavbarContainer>
     </Nav>
