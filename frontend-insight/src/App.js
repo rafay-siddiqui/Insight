@@ -60,15 +60,15 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <div>
-          {users ? users : 'There is no user data available'}
-          <br />
-          <button onClick={createUser}>Add user</button>
-          <br />
-          <button onClick={deleteUser}>Delete user</button>
-        </div>
 
         <Router>
+          <div>
+            {users ? users : 'There is no user data available'}
+            <br />
+            <button onClick={createUser}>Add user</button>
+            <br />
+            <button onClick={deleteUser}>Delete user</button>
+          </div>
           <Switch>
             <Route path="/portfolio" component={PortfolioPage} exact />
             <Route path="/stock" component={StockPage} exact />
