@@ -2,7 +2,7 @@ import {React, useState} from "react";
 import TickerLookup from "./TickerLookup";
 import StockQuote from "./StockQuote";
 import { hyperlinkTicker } from "../helper/fetchers";
-import TabView from "../components/TabView";
+
 
 export default function MainView() {
   const [displayStock, setDisplayStock] = useState('');
@@ -16,9 +16,7 @@ export default function MainView() {
 
   return (
     <div>
-      <div>
-        <TabView></TabView>
-      </div>
+      
 
       <div style={{ display: "flex" }} className='portfolioDiv'>
 

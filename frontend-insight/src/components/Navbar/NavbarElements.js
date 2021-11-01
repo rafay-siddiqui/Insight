@@ -84,6 +84,7 @@ Margine-left: 100px;
 
 export const NavItem = styled.li`
 height: 80px;
+color: #ffd700;
 `;
 
 export const NavLinks = styled(LinkR)`
@@ -114,4 +115,15 @@ align-item: center;
     display: none;
 }
 `;
+
+export const BalShow  = styled.nav`
+{ color:#ffd700;
+  margin-right: 100px;
+  align-item: ;
+  text-decoration: none;
+  padding: 2.5rem 1rem;
+  height: 100%;
+  cursor: pointer
+}`;
+
 
