@@ -40,6 +40,7 @@ function Navbar(props) {
           </NavItem>
 
           {props.balance && <BalShow>Balance: {props.balance} </BalShow>}
+          {!props.balance && <BalShow>Balance: Empty </BalShow>}
 
           <Avatar addBalance={props.addBalance} />
         </NavMenu>
