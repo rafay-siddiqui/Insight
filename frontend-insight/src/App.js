@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import PortfolioPage from "./pages/Portfolio";
 import StockPage from "./pages/Stock";
-import Chandni from "./pages/Chandni";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
+const queryClient = new QueryClient()
 
 function App() {
   //Should throw these database query functions into their own file later
@@ -57,24 +58,26 @@ function App() {
 
 
   return (
-    <div >
-      <div>
-        {users ? users : 'There is no user data available'}
-        <br />
-        <button onClick={createUser}>Add user</button>
-        <br />
-        <button onClick={deleteUser}>Delete user</button>
-      </div>
-      <Router>
-        <Switch>
-          <Route path="/portfolio" component={PortfolioPage} exact />
-          <Route path="/stock" component={StockPage} exact />
-          <Route path="/" component={Home} exact />
-          <Route path="/rafay" exact />
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <div>
+          {users ? users : 'There is no user data available'}
+          <br />
+          <button onClick={createUser}>Add user</button>
+          <br />
+          <button onClick={deleteUser}>Delete user</button>
+        </div>
 
+        <Router>
+          <Switch>
+            <Route path="/portfolio" component={PortfolioPage} exact />
+            <Route path="/stock" component={StockPage} exact />
+            <Route path="/" component={Home} exact />
+            <Route path="/rafay" exact />
+          </Switch>
+        </Router>
+      </QueryClientProvider>
+    </>
   );
 }
 

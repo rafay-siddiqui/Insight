@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Nav,
   NavbarContainer,
@@ -13,6 +13,7 @@ import {
 import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
 import { useContext } from "react";
+import { useBalance } from "../../api";
 
 function Navbar() {
 
@@ -21,17 +22,17 @@ function Navbar() {
   const balanceSetter = (amount) => {
     setBalanceVal(prevState => prevState + parseInt(amount))
   }
-const sticky = {
-  
+  const sticky = {
+
     position: "fixed",
     top: "0",
     width: "100%"
   };
 
-
-
+  const balanceQuery = useBalance();
+  console.log(balanceQuery);
   return (
-    <Nav style ={sticky}>
+    <Nav style={sticky}>
       <NavbarContainer>
         <NavLogo to="/">
           <img src={logo} height="100" width="100" padding="24px" alt=""></img>{" "}
@@ -49,9 +50,9 @@ const sticky = {
           <NavItem>
             <NavLinks to="about">About</NavLinks>
           </NavItem>
-         
-            <BalShow>Balance: {balanceVal} </BalShow>
-         
+
+          <BalShow>Balance: {balanceVal} </BalShow>
+
           <Avatar addBalance={balanceSetter} />
         </NavMenu>
       </NavbarContainer>
