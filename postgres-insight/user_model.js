@@ -42,8 +42,34 @@ const deleteUser = () => {
   })
 }
 
+const setBalance = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { balance } = body
+    pool.query('UPDATE users SET balance = $1', [balance], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(`User balance now: ${balance}`)
+    })
+  })
+}
+
+const addPurchase = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { stockID, userID, timestamp, purchasePrice, numberOfStocks } = body
+    pool.query('INSERT INTO purchases (stockID, userID, timestamp, purchasePrice, numberOfStocks) VALUES ($1, $2, $3, $4, $5)', [stockID, userID, timestamp, purchasePrice, numberOfStocks], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve (`User with ID ${userID} purchased ${numberOfStocks} stocks of the stock with ID ${stockID} at ${timestamp} for ${purchasePrice} each`)
+    })
+  })
+}
+
 module.exports = {
   getUsers,
   createUser,
   deleteUser,
+  setBalance,
+  addPurchase
 }
