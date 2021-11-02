@@ -42,6 +42,18 @@ const deleteUser = () => {
   })
 }
 
+const getBalance = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { username } = body
+    pool.query('SELECT balance FROM users WHERE name = $1', [username], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results)
+    })
+  })
+}
+
 const setBalance = (body) => {
   return new Promise(function(resolve, reject) {
     const { balance } = body
@@ -71,5 +83,6 @@ module.exports = {
   createUser,
   deleteUser,
   setBalance,
+  getBalance,
   addPurchase
 }

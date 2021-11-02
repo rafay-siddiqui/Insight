@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import PortfolioPage from "./pages/Portfolio";
 import StockPage from "./pages/Stock";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { authContext } from "./providers/AuthProvider";
+import { useBalance } from "./api";
 
 const queryClient = new QueryClient()
 
 function App() {
+  const { user } = useContext(authContext)
+  const balanceQuery = useBalance();
+  console.log(balanceQuery)
+
   const [balanceVal, setBalanceVal] = useState(0);
 
   const balanceSetter = (amount) => {
     setBalanceVal(prevState => prevState + parseInt(amount))
   }
+
   const [users, setUsers] = useState(false);
   useEffect(() => {
     getUser();
