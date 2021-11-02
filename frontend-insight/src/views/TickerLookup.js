@@ -5,6 +5,7 @@ import TickerResult from "../components/TickerResult"
 import './TickerLookup.scss'
 import BuyStock from '../components/BuyStock';
 import postPurchase from "../api/PostPurchase";
+import { useMutation } from "react-query";
 
 export default function TickerLookup(props) {
 
@@ -19,8 +20,10 @@ export default function TickerLookup(props) {
       .then((res) => setResults(res)
       )
   }
+
+  // const purchaseStock = useMutation(() => postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
   const purchaseStock = () => {
-    return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
+    return (postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount)))
   }
 
   return (
