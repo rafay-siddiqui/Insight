@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
-import Avatar from "../components/Avatar";
+import Footer from "../components/Footer";
 
 import Navbar from "../components/Navbar";
 import { authContext } from "../providers/AuthProvider";
@@ -28,6 +28,7 @@ function PortfolioPage() {
       <Navbar></Navbar>
       <MainView />
       <Portfolio></Portfolio>
+      <Footer/>
     </div>
   );
 }

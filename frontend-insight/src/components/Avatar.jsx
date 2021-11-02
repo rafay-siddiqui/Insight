@@ -19,10 +19,10 @@ export default function Avatar(props) {
       <img src={img}></img>
       </div>
        {open && <div class="menu">
-        <h3> Jone Jone <br/><span>Balance: balanceamount</span></h3> 
+        <h3> Elon </h3>
         <ul>
          
-          <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#" onClick={() => setBalance(!balance)}> Add Balance </a></li>
+          <li><a href="#" onClick={() => setBalance(!balance)}> Add Balance(  </a><i class="fa fa-usd" aria-hidden="true"></i>)</li>
           {balance && <Balance addBalance={props.addBalance}/> }
           <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={logout}> logout </a></li>
         </ul>

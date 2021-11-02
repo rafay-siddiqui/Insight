@@ -48,11 +48,13 @@ function Navbar() {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
 
-          <BalShow>Balance: {balanceVal} </BalShow>
-
+        
+         
           <Avatar addBalance={balanceSetter} />
         </NavMenu>
+       
       </NavbarContainer>
+      <BalShow>Balance: $ {balanceVal} </BalShow>
     </Nav>
   );
 }
