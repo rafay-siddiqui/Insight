@@ -7,7 +7,7 @@ export default function BuyStock(props) {
     <>
       <h2>Buy This Stock</h2>
       <input type='number' className='buystock buystock--input' value={props.value} onChange={(e) => {props.onChange(e.target.value)}} />
-      <button onClick={() => (props.onClick)}>Purchase</button>
+      <button onClick={props.onClick}>Purchase</button>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import { authContext } from "../providers/AuthProvider";
 import StockView from "../views/StockView";
@@ -9,9 +9,9 @@ function StockPage(props) {
   return (
     <div>
       <h1>Stock</h1>
-      <Navbar/>
+      <Navbar />
       <div className="body">
-      <StockView/>
+        <StockView />
       </div>
     </div>
   );

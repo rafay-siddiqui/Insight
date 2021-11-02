@@ -4,7 +4,7 @@ import { searchTicker, hyperlinkTicker } from "../helper/fetchers";
 import TickerResult from "../components/TickerResult"
 import './TickerLookup.scss'
 import BuyStock from '../components/BuyStock';
-import PostPurchase from "../api/PostPurchase";
+import postPurchase from "../api/PostPurchase";
 import { useMutation } from "react-query";
 
 export default function TickerLookup(props) {
@@ -21,7 +21,10 @@ export default function TickerLookup(props) {
       )
   }
 
-  const purchaseStock = useMutation('purchase', () => PostPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
+  // const purchaseStock = useMutation(() => postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
+  const purchaseStock = () => {
+    return console.log(postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
+  }
 
   return (
     <div className="tickerLookup">
@@ -35,6 +38,8 @@ export default function TickerLookup(props) {
         ))}
       </div>
       <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />
+      {purchaseStock.isSuccess && <h5>Success!</h5>}
+      {purchaseStock.isError && <h5>Error!</h5>}
     </div>
   );
 
