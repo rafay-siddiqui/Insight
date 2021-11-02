@@ -21,7 +21,7 @@ const getUsers = () => {
 const createUser = (body) => {
   return new Promise(function(resolve, reject) {
     const { name } = body
-    pool.query('INSERT INTO users(name) VALUES ($1) RETURNING *', [name], (error, results) => {
+    pool.query('INSERT INTO users(name, balance) VALUES ($1, 0) RETURNING *', [name], (error, results) => {
       if (error) {
         reject(error)
       }
