@@ -5,12 +5,4 @@ const getBalance = async (user) => {
       return res.data;
 }
 
-// function putBalance(user) {
-//   return axios.put()
-// }
-
-// function updateBalance(user, setBalance) {
-//   return axios.put
-// }
-
 export default getBalance;
