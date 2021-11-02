@@ -4,11 +4,16 @@ import './index.scss';
 import App from './App';
 
 import AuthProvider from './providers/AuthProvider';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
-  <AuthProvider>
+  <QueryClientProvider client={queryClient}>
+    <AuthProvider>
     <App/>
-    </AuthProvider>,
+    </AuthProvider>
+  </QueryClientProvider>,
   document.getElementById('root')
 );
 

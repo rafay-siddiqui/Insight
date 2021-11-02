@@ -49,7 +49,7 @@ const getBalance = (body) => {
       if (error) {
         reject(error)
       }
-      resolve(results)
+      resolve(results.rows)
     })
   })
 }

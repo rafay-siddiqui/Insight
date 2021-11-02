@@ -4,18 +4,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import PortfolioPage from "./pages/Portfolio";
 import StockPage from "./pages/Stock";
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { authContext } from "./providers/AuthProvider";
-import { useBalance } from "./api";
 
-const queryClient = new QueryClient()
+import { useBalance } from "./api";
+import { authContext } from "./providers/AuthProvider";
+
 
 function App() {
-  const { user } = useContext(authContext)
-  const balanceQuery = useBalance();
+  const [balanceVal, setBalanceVal] = useState(0);
+  
+  const { user } = useContext(authContext);
+  const balanceQuery = useBalance(user);
   console.log(balanceQuery)
 
-  const [balanceVal, setBalanceVal] = useState(0);
 
   const balanceSetter = (amount) => {
     setBalanceVal(prevState => prevState + parseInt(amount))
@@ -69,8 +69,6 @@ function App() {
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-
         <Router>
           <div>
             {users ? users : 'There is no user data available'}
@@ -90,7 +88,6 @@ function App() {
             <Route path="/rafay" exact />
           </Switch>
         </Router>
-      </QueryClientProvider>
     </>
   );
 }
