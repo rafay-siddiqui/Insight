@@ -7,16 +7,8 @@ import Navbar from "../components/Navbar";
 import { authContext } from "../providers/AuthProvider";
 //import Button from "../Button";
 import LoginInfo from "../components/LoginInfo";
-import Login from "../components/Login";
-import Home from ".";
-import {
-  Nav,
-  NavbarContainer,
-  NavMenu,
-  NavItem,
-} from "../components/Navbar/NavbarElements";
-import StockView from "../views/StockView";
 import Portfolio from "../views/Portfolio";
+import './Portfolio.scss'
 
 function PortfolioPage(props) {
   const { auth } = useContext(authContext);
@@ -24,8 +16,11 @@ function PortfolioPage(props) {
     <div>
       {!auth && <Redirect to="/" />}
       {auth && <Redirect to="/portfolio" />}
+      <Navbar />
       {auth && <LoginInfo />}
-      <Portfolio></Portfolio>
+      <div className="body">
+        <Portfolio></Portfolio>
+      </div>
     </div>
   );
 }

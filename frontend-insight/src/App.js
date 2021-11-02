@@ -62,7 +62,6 @@ function App() {
           <br />
           <button onClick={deleteUser}>Delete user</button>
         </div> */}
-        <Navbar/>
         <Switch>
           <Route path="/portfolio" exact>
              <PortfolioPage />

@@ -5,8 +5,7 @@ import {
   NavLogo,
   NavMenu,
   NavItem,
-  NavLinks,
-  BalShow,
+  NavLinks
 } from "./NavbarElements";
 import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
@@ -46,7 +45,7 @@ function Navbar(props) {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
 
-          {user && <Balance/>}
+          {user && <Balance />}
 
           <Avatar addBalance={props.addBalance} />
         </NavMenu>
