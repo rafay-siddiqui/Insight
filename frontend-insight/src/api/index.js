@@ -1,25 +1,12 @@
-import { useQuery } from "react-query";
+import axios from "axios";
 
-const getBalance = (username) => {
-  fetch('http://localhost:8080/get/balance', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username }),
-  })
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-      console.log('balance yeahhhh: ', JSON.parse(data)[0]);
-    });
-
-
-  // return Promise.resolve({balance: 250})
+export default function getBalance(user, setBalance) {
+  return axios.get(`http://localhost:8080/get/balance/${user}`)
+      .then((res) => {
+        setBalance(res.data[0].balance)
+      });
 }
 
-export const useBalance = (username) => {
-  return useQuery('balance', getBalance(username))
-}
-
+// function updateBalance(user, setBalance) {
+//   return axios.put
+// }

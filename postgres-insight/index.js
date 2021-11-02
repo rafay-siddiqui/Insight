@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
     })
 })
 
-app.post('/get/balance', (req, res) => {
-  user_model.getBalance(req.body)
+app.get('/get/balance/:user', (req, res) => {
+  user_model.getBalance(req.params.user)
   .then(response => {
     res.status(200).send(response)
   })

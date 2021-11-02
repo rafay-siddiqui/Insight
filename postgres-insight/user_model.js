@@ -42,14 +42,13 @@ const deleteUser = () => {
   })
 }
 
-const getBalance = (body) => {
+const getBalance = (username) => {
   return new Promise(function(resolve, reject) {
-    const { username } = body
     pool.query('SELECT balance FROM users WHERE name = $1', [username], (error, results) => {
       if (error) {
         reject(error)
       }
-      resolve(results.rows)
+      resolve(results.rows[0])
     })
   })
 }
