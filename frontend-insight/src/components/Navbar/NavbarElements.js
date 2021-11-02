@@ -116,7 +116,7 @@ align-item: center;
 }
 `;
 
-export const BalShow  = styled.nav`
+export const Balance  = styled.nav`
 { color:#ffd700;
   margin-right: 100px;
   align-item: ;
