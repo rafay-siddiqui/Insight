@@ -68,7 +68,8 @@ const setBalance = (body) => {
 const addPurchase = (body) => {
   return new Promise(function(resolve, reject) {
     const { stockTicker, userID, date, purchasePrice, numberOfStocks } = body
-    pool.query('INSERT INTO purchases (stockTicker, userID, timestamp, purchasePrice, numberOfStocks) VALUES ($1, $2, $3, $4, $5)', [stockTicker, userID, date, purchasePrice, numberOfStocks], (error, results) => {
+    pool.query(`INSERT INTO purchases (stockTicker, user_id, date, purchasePrice, numberOfStocks) 
+    VALUES ($1, $2, $3, $4, $5)`, [stockTicker, userID, date, purchasePrice, numberOfStocks], (error, results) => {
       if (error) {
         reject(error)
       }

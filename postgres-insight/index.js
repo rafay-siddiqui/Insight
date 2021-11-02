@@ -43,12 +43,13 @@ app.post('/users', (req, res) => {
 })
 
 app.post('/add/purchase', (req, res) => {
+  console.log(req.body)
   user_model.addPurchase(req.body)
     .then(response => {
       res.status(200).send(response);
     })
     .catch(error => {
-      res.status(500).send(error);
+      res.status(501).send(error);
     })
 })
 
