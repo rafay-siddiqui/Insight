@@ -115,18 +115,16 @@ export const NavBtn = styled.nav`
 
 export const BalShow = styled.nav`
    {
-    background: #deb887;
-
+    background: #d7b546;
     padding: 2px 10px 2px 0;
     border-radius: 25px;
-margin-top: 30px;
-    color: #ffd700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 20%;
-    margin-left: -80px;
-    background: transparent;
-    line-height: 60px;
-    text-align: right;
+    width: 9%;
+    margin-left: -300px;
   }
 `;

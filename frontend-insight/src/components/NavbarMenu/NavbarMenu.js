@@ -1,30 +1,29 @@
-import styled from 'styled-components';
-import {Link as LinkR} from "react-router-dom";
-
+import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
 
 export const Nav = styled.nav`
-background: #000;
-Height: 100px;
-padding-top:20px;
-/* Margin-top: -80px; */
-display: flex;
-justify-content: center;
-font-size: 1rem;
-top: 0;
-z-index:10;
+  background: #000;
+  height: 100px;
+  padding-top: 20px;
+  /* Margin-top: -80px; */
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  top: 0;
+  z-index: 10;
 
-@media screen and (max-width: 960px) {
-    transition:0.8s all ease;
-}
+  @media screen and (max-width: 960px) {
+    transition: 0.8s all ease;
+  }
 `;
 export const NavbarContainer = styled.div`
-display: flex;
-justify-content: space-between;
-height: 80px;
-z-index: 1;
-width: 100%;
-padding: 24px 24px;
-max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 24px 24px;
+  max-width: 1200px;
 `;
 export const NavLogo = styled(LinkR)`
 color: #FFF;
@@ -44,19 +43,19 @@ text-decoration: none;
 `;
 
 export const NavMenu = styled.ul`
-display: flex;
-align-items: center;
-List-style: none;
-text-align: center;
-Margine-right: -22px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margine-right: -22px;
 
-@media screen and (max-width:768px){
+  @media screen and (max-width: 768px) {
     display: none;
-}
+  }
 `;
 
 export const NavItem = styled.li`
-height: 80px;
+  height: 80px;
 `;
 
 export const NavLinks = styled(LinkR)`
@@ -79,10 +78,9 @@ cursor: pointer;
 `;
 
 export const NavBtn = styled.nav`
-display: flex;
-align-item: center;
-@media screen and (max-width: 768px){
+  display: flex;
+  align-item: center;
+  @media screen and (max-width: 768px) {
     display: none;
-}
+  }
 `;
-

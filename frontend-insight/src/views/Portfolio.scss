@@ -1,9 +1,35 @@
-.portfolioDiv--row1 {
-  display: flex;
+.container {
+
+display: flex;
+justify-content: Left;
+align-items: Left;
+padding: 0 60px;
+height: 600px;
+position: relative;
+margin-top: 100px;
+
+border-color: gold;
 }
 
-.portfolioDiv--left {
-  border: 1px solid lightgray;
-  padding: 1rem;
-  margin: 1rem;
+
+.content{
+z-index: 1;
+max-width: 500px;
+position: relative;
+margin-left:60px;
+padding: 8px 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.contentRight{
+z-index: 1;
+max-width: 500px;
+padding: 8px 24px;
+margin-left: 200px;
+flex-direction: row;
+position: relative;
+align-items: center;
+display: flex;
 }

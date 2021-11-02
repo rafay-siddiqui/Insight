@@ -22,7 +22,7 @@ export default function Avatar(props) {
         <h3> Elon </h3>
         <ul>
          
-          <li><a href="#" onClick={() => setBalance(!balance)}> Add Balance(  </a><i class="fa fa-usd" aria-hidden="true"></i>)</li>
+          <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#" onClick={() => setBalance(!balance)}> Add Balance </a></li>
           {balance && <Balance addBalance={props.addBalance}/> }
           <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={logout}> logout </a></li>
         </ul>

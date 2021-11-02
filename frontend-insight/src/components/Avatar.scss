@@ -24,7 +24,7 @@
 
 .action .menu {
   position: absolute;
-  top: 60px;
+  top: 75px;
   right: -10px;
   color: gold;
   padding: 10px 20px;
@@ -41,7 +41,7 @@
   padding: 20px 0;
   font-weight: 500;
   font-size: 18px;
-  color: darkgray;
+  color: gold;
   line-height: 1.2em;
 }
 .action .menu h3 span {
@@ -96,4 +96,18 @@
 
 .action .menu ul li li:hover a {
   color: darkgoldenrod;
+}
+
+.input{
+ 
+    padding: 2px 10px 2px 0;
+    border-radius: 25px;
+  
+ 
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9%;
+    margin-left: -300px;
 }
