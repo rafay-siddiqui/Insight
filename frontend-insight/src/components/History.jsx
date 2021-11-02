@@ -1,6 +1,7 @@
 import React from "react";
 import './History.scss'
 import HistoryItem from "./HistoryItem";
+import { useQuery } from "react-query";
 
 export default function History(props) {
   return (
