@@ -14,6 +14,6 @@ CREATE TABLE purchases (
   user_id INTEGER REFERENCES users(userID) ON DELETE CASCADE,
   stockTicker VARCHAR(4) NOT NULL,
   date DATE NOT NULL,
-  purchasePrice INTEGER NOT NULL,
+  purchasePrice NUMERIC NOT NULL,
   numberOfStocks INTEGER NOT NULL
 );

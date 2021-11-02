@@ -23,7 +23,7 @@ export default function TickerLookup(props) {
 
   // const purchaseStock = useMutation(() => postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
   const purchaseStock = () => {
-    return console.log(postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
+    return console.log(postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount)))
   }
 
   return (
