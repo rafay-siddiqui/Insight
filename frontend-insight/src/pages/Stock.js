@@ -11,7 +11,6 @@ function StockPage(props) {
   const { auth } = useContext(authContext);
   return (
     <div>
-      <Navbar balance={props.balance} addBalance={props.addBalance} />
       <h1>Stock</h1>
       <StockView/>
     </div>

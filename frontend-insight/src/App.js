@@ -1,18 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages";
 import PortfolioPage from "./pages/Portfolio";
 import StockPage from "./pages/Stock";
-import { authContext } from "./providers/AuthProvider";
-import getBalance from "./api";
 
 
 function App() {
   const [balanceVal, setBalanceVal] = useState(0);
-
-  const { user } = useContext(authContext);
 
 
   const balanceSetter = (amount) => {
@@ -72,13 +68,13 @@ function App() {
           <br />
           <button onClick={deleteUser}>Delete user</button>
         </div> */}
+        <Navbar/>
         <Switch>
           <Route path="/portfolio" exact>
-            {user && <PortfolioPage balance={balanceVal} addBalance={balanceSetter} />}
-            <button onClick={() => getBalance(user, setBalanceVal)}>click me</button>
+             <PortfolioPage />
           </Route>
           <Route path="/stock" exact>
-            <StockPage balance={balanceVal} addBalance={balanceSetter} />
+            <StockPage />
           </Route>
           <Route path="/" component={Home} exact />
           <Route path="/rafay" exact />

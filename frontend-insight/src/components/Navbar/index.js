@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   Nav,
   NavbarContainer,
@@ -10,9 +10,16 @@ import {
 } from "./NavbarElements";
 import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
+import { authContext } from "../../providers/AuthProvider";
+import Balance from "../Balance";
 
 
 function Navbar(props) {
+  const { auth, user } = useContext(authContext);
+
+  // useEffect(() => {
+  // }, [user]);
+
   const sticky = {
 
     position: "fixed",
@@ -39,8 +46,7 @@ function Navbar(props) {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
 
-          {props.balance && <BalShow>Balance: {props.balance} </BalShow>}
-          {!props.balance && <BalShow>Balance: Empty </BalShow>}
+          {user && <Balance/>}
 
           <Avatar addBalance={props.addBalance} />
         </NavMenu>

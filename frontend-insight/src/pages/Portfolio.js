@@ -25,7 +25,6 @@ function PortfolioPage(props) {
       {!auth && <Redirect to="/" />}
       {auth && <Redirect to="/portfolio" />}
       {auth && <LoginInfo />}
-      <Navbar onClick={() => props.onClick} balance={props.balance} addBalance={props.addBalance} />
       <Portfolio></Portfolio>
     </div>
   );
