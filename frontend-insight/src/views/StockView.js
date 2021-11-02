@@ -24,7 +24,7 @@ export default function StockView() {
         {/* <Portfolio></Portfolio> */}
 
 
-        <TickerLookup onClick={showStock} ></TickerLookup>
+        <TickerLookup onClick={showStock} data={displayStock}></TickerLookup>
 
       </div>
     </div>

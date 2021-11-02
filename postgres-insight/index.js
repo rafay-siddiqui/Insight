@@ -24,32 +24,42 @@ app.get('/', (req, res) => {
 
 app.get('/get/balance/:user', (req, res) => {
   user_model.getBalance(req.params.user)
-  .then(response => {
-    res.status(200).send(response)
-  })
-  .catch(error => {
-    res.status(500).send(error);
-  })
+    .then(response => {
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
 })
 
 app.post('/users', (req, res) => {
   user_model.createUser(req.body)
-  .then(response => {
-    res.status(200).send(response);
-  })
-  .catch(error => {
-    res.status(500).send(error);
-  })
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.post('/add/purchase', (req, res) => {
+  user_model.addPurchase(req.body)
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
 })
 
 app.delete('/users/:id', (req, res) => {
   user_model.deleteUser(req.params.id)
-  .then(response => {
-    res.status(200).send(response)
-  })
-  .catch(error => {
-    res.status(500).send(error);
-  })
+    .then(response => {
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
 })
 
 app.listen(PORT, () => {
