@@ -1,4 +1,11 @@
 input {
-  border-radius: 25px;
-  padding: 5px;
+  display: flex;
+  border-radius: 10px;
+  padding: 2px;
+  flex-grow: 5;
+}
+
+.tickerSearchBar {
+  display: flex;
+  width: 100%;
 }

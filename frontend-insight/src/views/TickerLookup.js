@@ -11,13 +11,17 @@ export default function TickerLookup(props) {
 
   const [ticker, setTicker] = useState("")
   const [results, setResults] = useState([])
+  const [showResults, setShowResults] = useState(false)
 
   const [stocksAmount, setStocksAmount] = useState(0)
 
   const createGraph = (event) => {
     event.preventDefault();
     searchTicker(ticker)
-      .then((res) => setResults(res)
+      .then((res) => {
+        setResults(res)
+        setShowResults(true)
+      }
       )
   }
 
@@ -25,6 +29,7 @@ export default function TickerLookup(props) {
   const purchaseStock = () => {
     setResults([]);
     setTicker("");
+    setStocksAmount(0);
     return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
   }
 
@@ -32,16 +37,15 @@ export default function TickerLookup(props) {
 
   return (
     <div className="tickerLookup">
-
+      {showResults && <h2>Results</h2>}
+      {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />}
       <TickerSearchBar value={ticker} onChange={setTicker} onClick={createGraph} />
       <div className="tickerResults">
-        <h2>Results</h2>
         {/* Iterate similar ticker results from API */}
         {results.map(result => (
-          <TickerResult onClick={() => { props.onClick(result.symbol) }} ticker={result.symbol} company={result.name} />
+          <TickerResult onClick={() => { props.onClick(result.symbol); }} ticker={result.symbol} company={result.name} />
         ))}
       </div>
-      {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />}
       {purchaseStock.isSuccess && <h5>Success!</h5>}
       {purchaseStock.isError && <h5>Error!</h5>}
     </div>

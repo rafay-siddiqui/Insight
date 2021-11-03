@@ -4,7 +4,29 @@
 
 #lookup--card {
   display: flex;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
   flex-grow: 1;
-  margin-left: 1rem;
+  width: 400px;
+}
+
+#quotegraph--card {
+  display: flex;
+  height: 700px;
+  flex-grow: 2;
+  margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+#ticker--lookup--header {
+
+}
+
+.stockview {
+  display: flex;
+}
+
+.quoteHolder {
+border: 1px black;
 }

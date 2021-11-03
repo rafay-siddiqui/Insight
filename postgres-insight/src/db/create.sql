@@ -12,7 +12,7 @@ INSERT INTO users(name, balance) VALUES ('Elon', 199);
 CREATE TABLE purchases (
   purchaseID SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(userID) ON DELETE CASCADE,
-  stockTicker VARCHAR(4) NOT NULL,
+  stockTicker VARCHAR(8) NOT NULL,
   date DATE NOT NULL,
   purchasePrice NUMERIC NOT NULL,
   numberOfStocks INTEGER NOT NULL

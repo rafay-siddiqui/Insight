@@ -19,20 +19,29 @@ export default function StockView() {
 
   return (
 
-    <div>
+    <div className="stockview">
 
       {/* <!-- TickerLookup --> */}
-      <div id='lookup--card' class="card shadow mb-4">
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <div id='lookup--card' class="card shadow">
+        <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Ticker Lookup</h6>
         </div>
 
-        <div id='lookup--stocks' class="card-body">
+        <div id='lookup--stocks'>
           <TickerLookup onClick={showStock} data={displayStock} />
         </div>
       </div>
 
-      <StockQuote data={displayStock} />
+      <div id='quotegraph--card' class="card shadow">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Stock Quote</h6>
+        </div>
+
+        <div className="quoteHolder">
+          <StockQuote data={displayStock} />
+        </div>
+      </div>
+
 
     </div>
   )

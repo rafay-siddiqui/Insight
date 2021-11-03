@@ -49,11 +49,19 @@ text-decoration: none;
   background-color: lightgray;
 }
 
-.button--tickerresult {
+.button--tickersearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   border-color: black;
+  width: auto;
+  padding: 0 5px 0 5px;
+  border-radius: 10px;
+  margin-left: 5px;
 }
 
-.button--tickerresult:hover{
+.button--tickersearch:hover{
   background-color: #f9e09f;
 }
 
@@ -70,4 +78,17 @@ text-decoration: none;
 
 .button--insight {
   font-size: 3rem;
+}
+
+.button--tickerresultitem {
+  border-radius: 0;
+  width: 85%;
+  white-space: normal;
+}
+
+.button--tickerresultitem:hover {
+  color: #32CD32;
+  background-color: #f9e09f;
+  font-weight: bolder;
+  width: 90%;
 }

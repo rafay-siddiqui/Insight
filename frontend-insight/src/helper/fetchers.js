@@ -3,7 +3,7 @@ import axios from "axios";
 const myApiKey = process.env.REACT_APP_FINANCIAL_MODELING_API
 
 function searchTicker(ticker) {
-  return axios.get(`https://financialmodelingprep.com/api/v3/search?query=${ticker.toUpperCase()}&limit=10&apikey=${myApiKey}`)
+  return axios.get(`https://financialmodelingprep.com/api/v3/search?query=${ticker.toUpperCase()}&limit=356&apikey=${myApiKey}`)
     .then((res) => res.data)
 }
 
@@ -13,7 +13,7 @@ function searchTicker(ticker) {
 // }
 
 function hyperlinkTicker(ticker) {
-  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=100&apikey=${myApiKey}`)
+  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=1000&apikey=${myApiKey}`)
     .then((res) => res.data)
 }
 

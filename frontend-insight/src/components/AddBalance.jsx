@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import "./balance.scss";
+import "./Balance.scss";
 
 export default function AddBalance(props) {
   const [amount, setAmount] = useState()

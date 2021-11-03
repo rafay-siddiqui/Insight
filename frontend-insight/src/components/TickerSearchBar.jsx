@@ -6,9 +6,9 @@ export default function TickerSearchBar(props) {
 
 
   return (
-    <form>
-      <input placeholder="Enter ticker name" value={props.value} onChange={(e) => props.onChange(e.target.value)}/>
-      <Button tickerresult onClick={props.onClick}>Search</Button>
+    <form className='tickerSearchBar'>
+      <input placeholder="Enter ticker or company name" value={props.value} onChange={(e) => props.onChange(e.target.value)}/>
+      <Button tickersearch onClick={props.onClick}>Search</Button>
     </form>
 
   )

@@ -10,6 +10,14 @@ export default function StockQuote(props) {
     data: []
   }];
 
+  let chartName = () => {
+    if (props.data) {
+      return `${props.data.symbol}'s Chart`
+    } else {
+      return 'Choose a Stock to Display'
+    }
+  }
+
   if (props.data) {
     const data = props.data.historical.map(day => (
       {
@@ -23,11 +31,11 @@ export default function StockQuote(props) {
   const options = {
     chart: {
       type: 'candlestick',
-      height: 350
+      height: 'auto'
     },
     title: {
-      text: 'CandleStick Chart',
-      align: 'left'
+      text: `${chartName()}`,
+      align: 'left',
     },
     xaxis: {
       type: 'datetime'
@@ -40,10 +48,8 @@ export default function StockQuote(props) {
   }
 
   return (
-    <div>
-      <h2>Stock Quote</h2>
-      {props.data && <Chart options={options} series={series} type="candlestick" height={350} width={900} />}
-
-    </div>
+    <>
+      {<Chart options={options} series={series} type="candlestick" height={600} width={'100%'} />}
+    </>
   )
 }
