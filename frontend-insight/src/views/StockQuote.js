@@ -42,9 +42,6 @@ export default function StockQuote(props) {
   return (
     <div>
       <h2>Stock Quote</h2>
-      {/* <Button login onClick={() => fetchData(props.ticker)}>API Call</Button>
-      <Button login onClick={ () => console.log(stockData[5]) }>Console Log</Button>
-      {stockData && <ExampleChart series={stockData}/>} */}
       {props.data && <Chart options={options} series={series} type="candlestick" height={350} width={900} />}
 
     </div>

@@ -53,11 +53,23 @@ const getBalance = (username) => {
   })
 }
 
-const setBalance = (body) => {
+const getDetailedHistory = (userID) => {
+  return new Promise(function(resolve, reject) {
+    pool.query('SELECT user_id, stockTicker, date, purchasePrice, numberOfStocks FROM purchases, users WHERE user_id = $1', [userID], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
+const setBalance = (body, username) => {
   return new Promise(function(resolve, reject) {
     const { balance } = body
-    pool.query('UPDATE users SET balance = $1', [balance], (error, results) => {
+    pool.query(`UPDATE users SET balance = $1 WHERE userid = ${username}`, [balance], (error, results) => {
       if (error) {
+        console.log(error)
         reject(error)
       }
       resolve(`User balance now: ${balance}`)
@@ -84,5 +96,6 @@ module.exports = {
   deleteUser,
   setBalance,
   getBalance,
-  addPurchase
+  addPurchase,
+  getDetailedHistory
 }

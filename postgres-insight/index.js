@@ -32,6 +32,16 @@ app.get('/get/balance/:user', (req, res) => {
     })
 })
 
+app.get('/get/history/:userID', (req, res) => {
+  user_model.getDetailedHistory(req.params.userID)
+    .then(response => {
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
 app.post('/users', (req, res) => {
   user_model.createUser(req.body)
     .then(response => {
@@ -50,6 +60,17 @@ app.post('/add/purchase', (req, res) => {
     })
     .catch(error => {
       res.status(501).send(error);
+    })
+})
+
+app.put('/set/balance/:user', (req, res) => {
+  user_model.setBalance(req.body, req.params.user)
+    .then(response => {
+      console.log(res)
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
     })
 })
 

@@ -11,13 +11,11 @@ import logo from "../../images/logo-nobg.png";
 import Avatar from "../Avatar";
 import { authContext } from "../../providers/AuthProvider";
 import Balance from "../Balance";
+import LoginInfo from "../LoginInfo";
 
 
 function Navbar(props) {
   const { auth, user } = useContext(authContext);
-
-  // useEffect(() => {
-  // }, [user]);
 
   const sticky = {
 

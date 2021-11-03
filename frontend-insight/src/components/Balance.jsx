@@ -6,10 +6,7 @@ import './Balance.scss'
 
 export default function Balance() {
   const {user, auth} = useContext(authContext)
-  const { data, isLoading } = useQuery('balance', () => getBalance(user), {
-    // Refetch the data every second
-    // refetchInterval: 1000,
-  });
+  const { data, isLoading } = useQuery('balance', () => getBalance(user));
   if (isLoading) {
     return (<h4 className="balance">Loading...</h4>)
   }

@@ -6,7 +6,7 @@ import './Portfolio.scss'
 function PortfolioPage(props) {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <div className="body">
         <Portfolio></Portfolio>
       </div>
