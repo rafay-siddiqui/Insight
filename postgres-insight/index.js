@@ -56,14 +56,10 @@ app.get('/checkstock/:ticker/:userID', (req, res) => {
     })
 })
 
-app.post('/add/stock/:ticker/:id', (req, res) => {
-  const body = {
-    ticker: req.params.ticker,
-    username: req.params.userID
-  }
-  user_model.insertStockList(body)
+app.post('/add/stock', (req, res) => {
+  console.log(req.body)
+  user_model.insertStockList(req.body)
   .then(response => {
-    console.log(response)
     res.status(200).send(response)
   })
   .catch(error => {

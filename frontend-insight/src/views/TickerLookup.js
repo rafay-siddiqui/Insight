@@ -6,6 +6,7 @@ import './TickerLookup.scss'
 import BuyStock from '../components/BuyStock';
 import postPurchase from "../api/PostPurchase";
 import checkStock from "../api/CheckStock";
+import addStockList from "../api/AddStockList";
 import { useMutation } from "react-query";
 import { authContext } from "../providers/AuthProvider";
 
@@ -29,35 +30,35 @@ export default function TickerLookup(props) {
   }
 
   // const purchaseStock = useMutation(() => postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
-  const purchasePosting = () => {
+
+  const stockValidation = (ticker) => {
+    return checkStock(ticker.toUpperCase(), user)
+      .then(res => {
+        if (res.count == 0) {
+          addStockList(ticker.toUpperCase(), user)
+        }
+      })
+  }
+  
+  const purchaseStock = (ticker, stocksAmount) => {
     setResults([]);
     setTicker("");
     setStocksAmount(0);
-    return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
+    postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
+    stockValidation(ticker)
   }
 
-  const stockValidation = () => {
-    return checkStock(ticker, user)
-    .then(res => {
-      console.log(res.count)
-      if (res.count == 0) {
-        console.log('new stock')
-      } else {
-        console.log('existing stock')
-      }
-    })
-  }
-
-  const purchaseStock = () => {
-    stockValidation()
-    purchasePosting()
+  const purchaseValidation = () => {
+    if (stocksAmount > 0) {
+      return purchaseStock(ticker, stocksAmount)
+    }
   }
 
 
   return (
     <div className="tickerLookup">
       {showResults && <h2>Results</h2>}
-      {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />}
+      {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseValidation} />}
       <TickerSearchBar value={ticker} onChange={setTicker} onClick={createGraph} />
       <div className="tickerResults">
         {/* Iterate similar ticker results from API */}

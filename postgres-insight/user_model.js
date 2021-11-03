@@ -97,7 +97,7 @@ const checkStockExists = (body) => {
     SELECT COUNT(*) 
     FROM purchases 
     JOIN users ON (purchases.user_id = users.userID)
-    WHERE stockticker = $1 AND users.name = $2`, [ticker.toUpperCase(), username], (error, results) => {
+    WHERE stockticker = $1 AND users.name = $2`, [ticker, username], (error, results) => {
       if (error) {
         console.log(error)
         reject(error)
