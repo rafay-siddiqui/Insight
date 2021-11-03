@@ -26,7 +26,7 @@ export default function History(props) {
   return (
     <div>
       <ul>
-      <HistoryItem id="historyTitle" stock="Detailed History" holdings="Holdings" price="Price" change="Change" />
+        <HistoryItem id="historyTitle" stock="Detailed History" holdings="Holdings" price="Price" change="Change" />
         {query.data.map(x => (
           <HistoryItem stock={x.stockticker} holdings={x.numberofstocks} price={x.purchaseprice} change="1.5%"/>
         ))}

@@ -64,11 +64,12 @@ const getDetailedHistory = (userID) => {
   })
 }
 
-const setBalance = (body) => {
+const setBalance = (body, username) => {
   return new Promise(function(resolve, reject) {
     const { balance } = body
-    pool.query('UPDATE users SET balance = $1', [balance], (error, results) => {
+    pool.query(`UPDATE users SET balance = $1 WHERE userid = ${username}`, [balance], (error, results) => {
       if (error) {
+        console.log(error)
         reject(error)
       }
       resolve(`User balance now: ${balance}`)
