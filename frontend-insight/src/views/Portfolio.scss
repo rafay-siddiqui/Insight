@@ -1,5 +1,4 @@
 .container {
-
 display: flex;
 justify-content: Left;
 align-items: Left;
@@ -7,7 +6,6 @@ padding: 0 60px;
 height: 600px;
 position: relative;
 margin-top: 100px;
-
 border-color: gold;
 }
 
@@ -32,4 +30,12 @@ flex-direction: row;
 position: relative;
 align-items: center;
 display: flex;
+}
+
+.chart--portfolio {
+height: 550px;
+}
+
+#lookup--portfolio {
+  height: 550px;
 }
