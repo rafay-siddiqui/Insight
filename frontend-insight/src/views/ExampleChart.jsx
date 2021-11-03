@@ -252,10 +252,6 @@ export default function ExampleChart(props) {
       type: 'candlestick',
       height: 350
     },
-    title: {
-      text: 'CandleStick Chart',
-      align: 'left'
-    },
     xaxis: {
       type: 'datetime'
     },
@@ -268,6 +264,6 @@ export default function ExampleChart(props) {
 
 
     return (
-      <Chart options={options} series={series} type="candlestick" height={350} width={500} />
+      <Chart options={options} series={series} type="candlestick" height={500} width={850} />
     )
 }

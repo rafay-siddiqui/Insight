@@ -41,7 +41,7 @@ function HeaderSection() {
           <br />
           <br />
 
-          <HeaderH1> Let The Money Work For You !!</HeaderH1>
+          <HeaderH1> Make Your Money Work </HeaderH1>
           {/*<HeaderP>
             Join Us Today to Make Smart Investments and Receive Stocks worth of
             $100 for FREE!!

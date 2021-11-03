@@ -7,7 +7,7 @@ display: flex;
 justify-content: Left;
 align-items: Left;
 padding: 0 60px;
-height: 600px;
+height: 800px;
 position: relative;
 z-index: 1;
  `
@@ -27,13 +27,12 @@ export const VideoBg = styled.video`
 width:100%;
 height:100%;
 --o--object--fit: cover;
-object-fit: Cover;
+object-fit: cover;
 background: #232a34;
 `
 
 export const HeaderContent=styled.div`
 z-index: 1;
-max-width: 500px;
 position: relative;
 margin-left:60px;
 padding: 8px 24px;
@@ -43,7 +42,6 @@ align-items: center;
 `
 export const HeaderContentRight=styled.div`
 z-index: 1;
-max-width: 500px;
 padding: 8px 24px;
 margin-left: 200px;
 flex-direction: row;
@@ -80,7 +78,6 @@ margin-top: 24px;
 color:#fff;
 font-size:24px;
 text-align: center;
-max-width:600px;
 
 &:hover{
     transition: all 0.2s ease-in-out;

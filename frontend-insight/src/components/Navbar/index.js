@@ -47,6 +47,7 @@ function Navbar(props) {
 
           <Avatar addBalance={props.addBalance} />
         </NavMenu>
+       
       </NavbarContainer>
     </Nav>
   );

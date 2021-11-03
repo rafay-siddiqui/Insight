@@ -1,14 +1,26 @@
 .yourStocksItem {
   background-color: transparent;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid black;
+  width: 90%;
+  padding: 0.2rem;
+  background-color: lightgray;
+  color: black;
 }
 
 .stock {
-  margin-left: 0.5em;
-  margin-right: 4em;
+  margin-left: 1em;
+  font-size: 2rem;
 }
 
 .change {
-  margin-right: 0.5em;
+  margin-right: 1em;
+  font-size: 2rem;
+}
+
+.yourStocksItem--header {
+  color: black;
+  background-color: gray;
 }

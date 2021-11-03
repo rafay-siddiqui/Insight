@@ -49,6 +49,14 @@ text-decoration: none;
   background-color: lightgray;
 }
 
+.button--tickerresult {
+  border-color: black;
+}
+
+.button--tickerresult:hover{
+  background-color: #f9e09f;
+}
+
 .button--tab {
   border-color: black;
   margin-right: 0;

@@ -30,7 +30,7 @@ export default function TickerLookup(props) {
 
   return (
     <div className="tickerLookup">
-      <h1>Ticker Lookup</h1>
+
       <TickerSearchBar value={ticker} onChange={setTicker} onClick={createGraph} />
       <div className="tickerResults">
         <h2>Results</h2>
