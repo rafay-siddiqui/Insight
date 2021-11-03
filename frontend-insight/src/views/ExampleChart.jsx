@@ -264,6 +264,6 @@ export default function ExampleChart(props) {
 
 
     return (
-      <Chart options={options} series={series} type="candlestick" height={500} width={850} />
+      <Chart options={options} series={series} type="candlestick" height={500} width={'90%'} />
     )
 }

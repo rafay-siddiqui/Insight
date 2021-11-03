@@ -28,6 +28,8 @@ export default function TickerLookup(props) {
     return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
   }
 
+
+
   return (
     <div className="tickerLookup">
 

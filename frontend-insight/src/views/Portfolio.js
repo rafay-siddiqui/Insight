@@ -13,7 +13,7 @@ export default function Portfolio(props) {
     <>
       {/* Row 1 */}
       <div id='row-1' class="row">
-        {/* <!-- Area Chart --> */}
+
         <div id='chart--card' class="card shadow mb-4">
 
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -26,18 +26,8 @@ export default function Portfolio(props) {
 
         </div>
 
-        {/* <!-- TickerLookup --> */}
-        <div id='lookup--card' class="card shadow mb-4">
+        
 
-          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Ticker Lookup</h6>
-          </div>
-
-          <div id='lookup--portfolio' class="card-body">
-            <TickerLookup />
-          </div>
-
-        </div>
       </div>
 
 
