@@ -69,7 +69,6 @@ const setBalance = (body, username) => {
     const { balance } = body
     pool.query(`UPDATE users SET balance = $1 WHERE userid = ${username}`, [balance], (error, results) => {
       if (error) {
-        console.log(error)
         reject(error)
       }
       resolve(`User balance now: ${balance}`)
@@ -99,7 +98,6 @@ const checkStockExists = (body) => {
     JOIN users ON (purchases.user_id = users.userID)
     WHERE stockticker = $1 AND users.name = $2`, [ticker, username], (error, results) => {
       if (error) {
-        console.log(error)
         reject(error)
       }
       resolve(results.rows[0])
@@ -117,7 +115,6 @@ const insertStockList = (body) => {
     WHERE users.name = $2
     `, [ticker, user], (error, results) => {
       if (error) {
-        console.log(error)
         reject(error)
       }
       resolve(results.rows)
