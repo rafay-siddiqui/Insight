@@ -22,7 +22,7 @@ export const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 24px 24px;
-  max-width: 700px;
+  max-width: 100%;
   margin-right: 500px;
 `;
 export const NavLogo = styled(LinkR)`
@@ -32,7 +32,6 @@ cursor: pointer;
 font-size: 1.5rem;
 display: flex;
 align-items: center;
-margin-left: 50px;
 font-weight: bold;
 text-decoration: none;
 &:hover{
@@ -52,14 +51,9 @@ text-align: Center;
 display: flex;
 align-items : center;
 justify-content: center; 
-margin-left: 24px;
 font-weight: bold;
 text-decoration: none;
 overflow: hidden;
-
-
-
-
 
 &:hover{
     transition: all 0.2s ease-in-out;

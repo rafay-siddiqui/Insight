@@ -6,6 +6,13 @@ import './YourStocks.scss'
 export default function YourStocks(props) {
   return (
     <div className="stockDiv">
+        <YourStocksItem header stock="Ticker" change="Change"/>
+        <YourStocksItem stock="GME" change="1000%" />
+        <YourStocksItem stock="GME" change="1000%" />
+        <YourStocksItem stock="GME" change="1000%" />
+        <YourStocksItem stock="GME" change="1000%" />
+        <YourStocksItem stock="GME" change="1000%" />
+        <YourStocksItem stock="GME" change="1000%" />
         <YourStocksItem stock="GME" change="1000%" />
         <YourStocksItem stock="GME" change="1000%" />
         <YourStocksItem stock="GME" change="1000%" />

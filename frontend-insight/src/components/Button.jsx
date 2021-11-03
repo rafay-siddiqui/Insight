@@ -11,6 +11,7 @@ export default function Button(props) {
     'button--nav': props.nav,
     'button--tab': props.tab,
     'button--inisght': props.insight,
+    'button--tickerresult': props.tickerresult,
   });
 
   return (

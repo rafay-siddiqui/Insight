@@ -89,13 +89,12 @@ form .field-group .wthree-field {
 form .field-group {
   background: rgba(255, 255, 255, 0.15);
   display: flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   margin-bottom: 20px;
-  padding: 2px 10px 2px 0;
+  padding: 2px 300px 2px 0;
   border-radius: 35px;
   -webkit-border-radius: 35px;
   -moz-border-radius: 35px;

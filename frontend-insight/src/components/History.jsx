@@ -4,12 +4,20 @@ import HistoryItem from "./HistoryItem";
 
 export default function History(props) {
   return (
-    <ul>
-      <HistoryItem id="historyTitle" stock="Detailed History" holdings="Holdings" price="Price" change="Change" />
-      <HistoryItem stock="Apple (AAPL)" holdings="5" price="$120" change="1.4%" />
-      <HistoryItem stock="Apple (AAPL)" holdings="5" price="$120" change="1.4%" />
-      <HistoryItem stock="Apple (AAPL)" holdings="5" price="$120" change="1.4%" />
-      <HistoryItem stock="Apple (AAPL)" holdings="5" price="$120" change="1.4%" />
+    <ul className='list'>
+      <HistoryItem id="historyTitle" stock="Stock Ticker" holdings="Holdings" price="Price" change="Change" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
+      <HistoryItem stock="AAPL" holdings="5" price="$120" change="1.4%" />
     </ul>
   )
 }
