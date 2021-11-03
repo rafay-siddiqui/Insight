@@ -66,6 +66,19 @@ app.post('/add/stock', (req, res) => {
   })
 })
 
+app.get('/get/stocklist/:userID', (req, res) => {
+  const body = {
+    user: req.params.userID
+  }
+  user_model.getStockList(body)
+  .then(response => {
+    res.status(200).send(response)
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+})
+
 app.post('/users', (req, res) => {
   user_model.createUser(req.body)
     .then(response => {

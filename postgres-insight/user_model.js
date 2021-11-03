@@ -122,6 +122,23 @@ const insertStockList = (body) => {
   })
 }
 
+const getStockList = (body) => {
+  return new Promise(function (resolve, reject) {
+    const { user } = body
+    pool.query(`
+    SELECT stockTicker
+    FROM stocks
+    JOIN users ON (users.userID = stocks.user_id)
+    WHERE users.name = $1
+    `, [user], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
 module.exports = {
   getUsers,
   createUser,
@@ -131,5 +148,6 @@ module.exports = {
   addPurchase,
   getDetailedHistory,
   checkStockExists,
-  insertStockList
+  insertStockList,
+  getStockList
 }

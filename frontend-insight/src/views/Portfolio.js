@@ -8,11 +8,12 @@ import "../css/Insight.css";
 import "../css/insight.min.css";
 import StockQuote from "./StockQuote";
 import { authContext } from "../providers/AuthProvider";
+import getStockList from "../api/GetStockList";
 
 export default function Portfolio(props) {
   const { user } = useContext(authContext);
 
-  
+  getStockList(user)
 
   return (
     <>
