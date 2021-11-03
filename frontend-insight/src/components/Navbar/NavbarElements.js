@@ -5,12 +5,11 @@ export const Nav = styled.nav`
   background: #000;
   height: 100px;
   padding-top: 20px;
-  /* Margin-top: -80px; */
   display: flex;
   justify-content: center;
   font-size: 1rem;
   top: 0;
-  z-index: 10;
+  z-index: 12;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
@@ -33,7 +32,7 @@ cursor: pointer;
 font-size: 1.5rem;
 display: flex;
 align-items: center;
-Margine-left: 50px;
+margin-left: 50px;
 font-weight: bold;
 text-decoration: none;
 &:hover{
@@ -53,7 +52,7 @@ text-align: Center;
 display: flex;
 align-items : center;
 justify-content: center; 
-Margine-left: 24px;
+margin-left: 24px;
 font-weight: bold;
 text-decoration: none;
 overflow: hidden;
@@ -74,7 +73,7 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  margine-left: 100px;
+  margin-left: 100px;
 
   @media screen and (max-width: 768px) {
     display: none;

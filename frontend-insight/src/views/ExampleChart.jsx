@@ -252,10 +252,6 @@ export default function ExampleChart(props) {
       type: 'candlestick',
       height: 350
     },
-    title: {
-      text: 'CandleStick Chart',
-      align: 'left'
-    },
     xaxis: {
       type: 'datetime'
     },

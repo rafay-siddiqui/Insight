@@ -39,3 +39,51 @@ height: 550px;
 #lookup--portfolio {
   height: 550px;
 }
+
+// #div--60 {
+//   width: 60%;
+//   margin: 1rem;
+// }
+
+// #div--30 {
+//   width: 30%;
+//   margin: 1rem;
+// }
+
+#row-1 {
+  display: flex;
+  margin-top: 50px;
+}
+
+#row-2 {
+  display: flex;
+  margin-top: 10px;
+}
+
+#chart--card {
+  display: flex;
+  flex-grow: 2;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#lookup--card {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+#stocks--card {
+  display: flex;
+  flex-grow: 4;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#history--card {
+  display: flex;
+  flex-grow: 5;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}

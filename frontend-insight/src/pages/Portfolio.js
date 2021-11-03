@@ -21,7 +21,9 @@ function PortfolioPage() {
       {auth && <Redirect to="/portfolio" />}
       {auth && <LoginInfo />}
       <Navbar></Navbar>
-    
+      <br></br>
+      <br></br>
+      <br></br>
       <Portfolio></Portfolio>
       <Footer/>
     </>
