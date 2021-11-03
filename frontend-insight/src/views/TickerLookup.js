@@ -20,7 +20,9 @@ export default function TickerLookup(props) {
       )
   }
   const purchaseStock = () => {
-    return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
+    setResults([]);
+    setTicker("");
+    return postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
   }
 
   return (
@@ -34,7 +36,7 @@ export default function TickerLookup(props) {
           <TickerResult onClick={() => { props.onClick(result.symbol) }} ticker={result.symbol} company={result.name} />
         ))}
       </div>
-      <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />
+      {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseStock} />}
       {purchaseStock.isSuccess && <h5>Success!</h5>}
       {purchaseStock.isError && <h5>Error!</h5>}
     </div>

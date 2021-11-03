@@ -4,7 +4,7 @@ export const authContext = createContext();
 
 export default function AuthProvider(props) {
   const [auth, setAuth] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("Elon");
 
   // Perform login process for the user & save authID, etc
   const login = function (email, password) {

@@ -9,7 +9,7 @@ import AddBalance from './AddBalance.jsx';
 
 export default function Avatar(props) {
   const [open, setopen] = useState(false);
-  const { user, logout } = useContext(authContext);
+  const { user } = useContext(authContext);
   const [balance, setBalance] = useState(false);
   return (
     <div className="action">
@@ -23,7 +23,7 @@ export default function Avatar(props) {
 
           <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#" onClick={() => setBalance(!balance)}> Add Balance </a></li>
           {balance && <AddBalance addBalance={props.addBalance} />}
-          <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={logout}> logout </a></li>
+          <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={props.logout}> logout </a></li>
         </ul>
       </div>
       }

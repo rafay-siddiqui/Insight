@@ -32,6 +32,17 @@ app.get('/get/balance/:user', (req, res) => {
     })
 })
 
+app.get('/get/history/:userID', (req, res) => {
+  user_model.getDetailedHistory(req.params.userID)
+    .then(response => {
+      console.log(res)
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
 app.post('/users', (req, res) => {
   user_model.createUser(req.body)
     .then(response => {

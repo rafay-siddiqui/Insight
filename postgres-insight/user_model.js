@@ -53,6 +53,17 @@ const getBalance = (username) => {
   })
 }
 
+const getDetailedHistory = (userID) => {
+  return new Promise(function(resolve, reject) {
+    pool.query('SELECT user_id, stockTicker, date, purchasePrice, numberOfStocks FROM purchases, users WHERE user_id = $1', [userID], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
 const setBalance = (body) => {
   return new Promise(function(resolve, reject) {
     const { balance } = body
@@ -84,5 +95,6 @@ module.exports = {
   deleteUser,
   setBalance,
   getBalance,
-  addPurchase
+  addPurchase,
+  getDetailedHistory
 }

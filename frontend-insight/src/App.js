@@ -8,60 +8,9 @@ import StockPage from "./pages/Stock";
 
 
 function App() {
-
-  // const [users, setUsers] = useState(false);
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
-  // function getUser() {
-  //   fetch("http://localhost:8080")
-  //     .then(response => {
-  //       return response.text();
-  //     })
-  //     .then(data => {
-  //       setUsers(data);
-  //     });
-  // }
-  // function createUser() {
-  //   let name = prompt('Enter user name');
-  //   fetch('http://localhost:8080/users', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ name }),
-  //   })
-  //     .then(response => {
-  //       return response.text();
-  //     })
-  //     .then(data => {
-  //       alert(data);
-  //       getUser();
-  //     });
-  // }
-  // function deleteUser() {
-  //   let id = prompt('Enter user id');
-  //   fetch(`http://localhost:8080/users/${id}`, {
-  //     method: 'DELETE',
-  //   })
-  //     .then(response => {
-  //       return response.text();
-  //     })
-  //     .then(data => {
-  //       alert(data);
-  //       getUser();
-  //     });
-  // }
   return (
     <>
       <Router>
-        {/* <div>
-          {users ? users : 'There is no user data available'}
-          <br />
-          <button onClick={createUser}>Add user</button>
-          <br />
-          <button onClick={deleteUser}>Delete user</button>
-        </div> */}
         <Switch>
           <Route path="/portfolio" exact>
              <PortfolioPage />
