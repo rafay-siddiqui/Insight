@@ -18,6 +18,8 @@ export default function TickerLookup(props) {
   const [results, setResults] = useState([])
   const [showResults, setShowResults] = useState(false)
   const [stocksAmount, setStocksAmount] = useState(0)
+  const [errorAmount, setErrorAmount] = useState(false)
+  const [errorTicker, setErrorTicker] = useState(false)
 
   const createGraph = (event) => {
     event.preventDefault();
@@ -34,8 +36,13 @@ export default function TickerLookup(props) {
   const stockValidation = (ticker) => {
     return checkStock(ticker.toUpperCase(), user)
       .then(res => {
+        console.log('the res is ', res)
         if (res.count == 0) {
+          console.log('addstocklistcalled')
+          console.log(res.count)
           addStockList(ticker.toUpperCase(), user)
+        } else {
+          console.log('stock purchased in the past')
         }
       })
   }
@@ -44,13 +51,21 @@ export default function TickerLookup(props) {
     setResults([]);
     setTicker("");
     setStocksAmount(0);
-    postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
-    stockValidation(ticker)
+    return stockValidation(ticker)
+    .then(res => {postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
+
+    })
   }
 
   const purchaseValidation = () => {
-    if (stocksAmount > 0) {
+    if (stocksAmount > 0 && ticker) {
+      setErrorAmount(false)
+      setErrorTicker(false)
       return purchaseStock(ticker, stocksAmount)
+    } else if (stocksAmount < 1){
+      setErrorAmount(true)
+    } else if (!ticker) {
+      setErrorTicker(true)
     }
   }
 
@@ -59,6 +74,8 @@ export default function TickerLookup(props) {
     <div className="tickerLookup">
       {showResults && <h2>Results</h2>}
       {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseValidation} />}
+      {errorAmount && <h5 className='purchase--error' >Must select positive number of stocks</h5>}
+      {errorTicker && <h5 className='purchase--error' >Must a stock</h5>}
       <TickerSearchBar value={ticker} onChange={setTicker} onClick={createGraph} />
       <div className="tickerResults">
         {/* Iterate similar ticker results from API */}
@@ -66,8 +83,6 @@ export default function TickerLookup(props) {
           <TickerResult onClick={() => { props.onClick(result.symbol); }} ticker={result.symbol} company={result.name} />
         ))}
       </div>
-      {purchaseStock.isSuccess && <h5>Success!</h5>}
-      {purchaseStock.isError && <h5>Error!</h5>}
     </div>
   );
 

@@ -8,7 +8,7 @@ CREATE TABLE users (
   balance BIGINT
 );
 
-INSERT INTO users(name, balance) VALUES ('Elon', 6000000000);
+INSERT INTO users(name, balance) VALUES ('Elon', 100000);
 
 CREATE TABLE stocks (
   stockID SERIAL PRIMARY KEY NOT NULL,
