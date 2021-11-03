@@ -42,6 +42,35 @@ app.get('/get/history/:userID', (req, res) => {
     })
 })
 
+app.get('/checkstock/:ticker/:userID', (req, res) => {
+  const body = {
+    ticker: req.params.ticker,
+    username: req.params.userID
+  }
+  user_model.checkStockExists(body)
+    .then(response => {
+      res.status(200).send(response)
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    })
+})
+
+app.post('/add/stock/:ticker/:id', (req, res) => {
+  const body = {
+    ticker: req.params.ticker,
+    username: req.params.userID
+  }
+  user_model.insertStockList(body)
+  .then(response => {
+    console.log(response)
+    res.status(200).send(response)
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+})
+
 app.post('/users', (req, res) => {
   user_model.createUser(req.body)
     .then(response => {
@@ -53,7 +82,6 @@ app.post('/users', (req, res) => {
 })
 
 app.post('/add/purchase', (req, res) => {
-  console.log(req.body)
   user_model.addPurchase(req.body)
     .then(response => {
       res.status(200).send(response);

@@ -90,6 +90,41 @@ const addPurchase = (body) => {
   })
 }
 
+const checkStockExists = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { ticker, username } = body;
+    pool.query(`
+    SELECT COUNT(*) 
+    FROM purchases 
+    JOIN users ON (purchases.user_id = users.userID)
+    WHERE stockticker = $1 AND users.name = $2`, [ticker.toUpperCase(), username], (error, results) => {
+      if (error) {
+        console.log(error)
+        reject(error)
+      }
+      resolve(results.rows[0])
+    })
+  })
+}
+
+const insertStockList = (body) => {
+  return new Promise(function (resolve, reject) {
+    const { ticker, user } = body
+    pool.query(`
+    INSERT INTO stocks(stockTicker, user_id)
+    SELECT $1, users.userID
+    FROM users
+    WHERE users.name = $2
+    `, [ticker, user], (error, results) => {
+      if (error) {
+        console.log(error)
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
 module.exports = {
   getUsers,
   createUser,
@@ -97,5 +132,7 @@ module.exports = {
   setBalance,
   getBalance,
   addPurchase,
-  getDetailedHistory
+  getDetailedHistory,
+  checkStockExists,
+  insertStockList
 }

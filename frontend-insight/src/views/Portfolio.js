@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ExampleChart from "./ExampleChart";
 import History from "../components/History";
 import YourStocks from "../components/YourStocks";
@@ -9,6 +9,7 @@ import "../css/insight.min.css";
 import StockQuote from "./StockQuote";
 
 export default function Portfolio(props) {
+
   return (
     <>
       {/* Row 1 */}
