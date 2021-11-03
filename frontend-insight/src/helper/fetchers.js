@@ -7,22 +7,17 @@ function searchTicker(ticker) {
     .then((res) => res.data)
 }
 
-// function hyperlinkTicker(ticker) {
-//   return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?serietype=line&apikey=${myApiKey}`)
-//     .then((res) => (res.data))
-// }
-
 function hyperlinkTicker(ticker) {
   return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=100&apikey=${myApiKey}`)
     .then((res) => res.data)
 }
 
-// function hyperlinkTicker(ticker) {
-//   return axios.get(`https://financialmodelingprep.com/api/v3/historical-chart/1min/${ticker}?apikey=${myApiKey}`)
-//     .then((res) => res.data)
-// }
+function getStockChange(ticker) {
+  return axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${ticker}?timeseries=1&apikey=${myApiKey}`)
+    .then((res) => res.data)
+}
 
 
 
-export { searchTicker, hyperlinkTicker };
+export { searchTicker, hyperlinkTicker, getStockChange };
 
