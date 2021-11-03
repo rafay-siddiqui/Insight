@@ -57,7 +57,6 @@ app.get('/checkstock/:ticker/:userID', (req, res) => {
 })
 
 app.post('/add/stock', (req, res) => {
-  console.log(req.body)
   user_model.insertStockList(req.body)
   .then(response => {
     res.status(200).send(response)
@@ -90,7 +89,6 @@ app.post('/add/purchase', (req, res) => {
 app.put('/set/balance/:user', (req, res) => {
   user_model.setBalance(req.body, req.params.user)
     .then(response => {
-      console.log(res)
       res.status(200).send(response)
     })
     .catch(error => {
