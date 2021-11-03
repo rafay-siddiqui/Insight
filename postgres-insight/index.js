@@ -70,6 +70,7 @@ app.get('/get/stocklist/:userID', (req, res) => {
   const body = {
     user: req.params.userID
   }
+  console.log(body)
   user_model.getStockList(body)
   .then(response => {
     res.status(200).send(response)
