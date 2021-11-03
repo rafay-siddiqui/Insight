@@ -33,16 +33,11 @@ export default function TickerLookup(props) {
 
   // const purchaseStock = useMutation(() => postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, stocksAmount))
 
-  const stockValidation = (ticker) => {
+  const stockValidation = (ticker, stocksAmount) => {
     return checkStock(ticker.toUpperCase(), user)
       .then(res => {
-        console.log('the res is ', res)
         if (res.count == 0) {
-          console.log('addstocklistcalled')
-          console.log(res.count)
           addStockList(ticker.toUpperCase(), user)
-        } else {
-          console.log('stock purchased in the past')
         }
       })
   }
@@ -51,21 +46,16 @@ export default function TickerLookup(props) {
     setResults([]);
     setTicker("");
     setStocksAmount(0);
-    return stockValidation(ticker)
-    .then(res => {postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount));
-
-    })
+    stockValidation(ticker, stocksAmount)
+    postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
   }
 
   const purchaseValidation = () => {
-    if (stocksAmount > 0 && ticker) {
+    if (stocksAmount > 0) {
       setErrorAmount(false)
-      setErrorTicker(false)
       return purchaseStock(ticker, stocksAmount)
-    } else if (stocksAmount < 1){
+    } else {
       setErrorAmount(true)
-    } else if (!ticker) {
-      setErrorTicker(true)
     }
   }
 

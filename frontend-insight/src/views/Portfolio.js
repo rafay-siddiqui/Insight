@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import ExampleChart from "./ExampleChart";
 import History from "../components/History";
 import YourStocks from "../components/YourStocks";
@@ -7,8 +7,12 @@ import TickerLookup from "./TickerLookup";
 import "../css/Insight.css";
 import "../css/insight.min.css";
 import StockQuote from "./StockQuote";
+import { authContext } from "../providers/AuthProvider";
 
 export default function Portfolio(props) {
+  const { user } = useContext(authContext);
+
+  
 
   return (
     <>
