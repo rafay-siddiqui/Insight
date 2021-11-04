@@ -1,7 +1,7 @@
 
 import './Avatar.scss';
 import React, { useState, useContext } from 'react';
-import img from "../images/Profile.jpg";
+import img from "../images/elon.jpg";
 import { authContext } from '../providers/AuthProvider';
 import { useQuery } from "react-query";
 import 'font-awesome/css/font-awesome.min.css';

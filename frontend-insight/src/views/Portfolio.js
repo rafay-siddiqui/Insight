@@ -1,19 +1,28 @@
 import React, {useState, useContext} from "react";
 import ExampleChart from "./ExampleChart";
+import PercentChart from "./PercentChart";
 import History from "../components/History";
 import YourStocks from "../components/YourStocks";
 import "./Portfolio.scss";
-import TickerLookup from "./TickerLookup";
 import "../css/Insight.css";
 import "../css/insight.min.css";
-import StockQuote from "./StockQuote";
 import { authContext } from "../providers/AuthProvider";
-import getStockList from "../api/GetStockList";
+import Button from "../components/Button"
 
 export default function Portfolio(props) {
   const { user } = useContext(authContext);
+  const [percentChart, setPercentChart] = useState(true);
+  const [moveChart, setMoveChart] = useState(false);
 
-  // getStockList(user)
+  const changeToPChart = () => {
+    setMoveChart(false);
+    setPercentChart(true);
+  }
+
+  const changeToMoveChart = () => {
+    setMoveChart(true);
+    setPercentChart(false);
+  }
 
   return (
     <>
@@ -27,7 +36,9 @@ export default function Portfolio(props) {
           </div>
 
           <div className='chart--portfolio'>
-            <ExampleChart />
+            {moveChart && <ExampleChart />}
+            {percentChart && <PercentChart/>}
+            <Button chart onClick={changeToPChart}>Daily Percentage Change</Button> <Button chart onClick={changeToMoveChart}>Portfolio Movement</Button>
           </div>
 
         </div>
