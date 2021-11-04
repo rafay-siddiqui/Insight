@@ -32,8 +32,10 @@ export default function TickerLookup(props) {
       setErrorBalance(true)
     } else {
       setErrorBalance(false)
-      setBalance(balance, 1);
-      postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
+      setTimeout(() => {
+        setBalance(balance, 1);
+        postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
+      }, 1000)
     }
   }
 
@@ -60,7 +62,7 @@ export default function TickerLookup(props) {
   const purchaseStock = (stocksAmount) => {
     setResults([]);
     setTicker("");
-    
+
     stockValidation(props.data.symbol, stocksAmount)
     updateBalance(parseFloat(stocksAmount) * parseFloat(props.data.historical[0].close));
     setStocksAmount(0);

@@ -19,7 +19,8 @@ export default function Avatar(props) {
 
   const updateBalance = (amount) => {
     const balance = parseFloat(balanceQuery.data.balance) + parseFloat(amount);
-    return setBalance(balance, 1);
+    setBalance(balance, 1);
+    return setopen(false);
   }
 
   return (
@@ -29,7 +30,7 @@ export default function Avatar(props) {
         <img src={img}></img>
       </div>
       {open && <div class="menu">
-        <h3> {user} <br /><span>Balance: balanceamount</span></h3>
+        <h3> {user} <br /><span>Balance: $ {parseFloat(balanceQuery.data.balance).toFixed(2)}</span></h3>
         <ul>
 
           <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#" onClick={() => setPopUp(!popUp)}> Add Balance </a></li>

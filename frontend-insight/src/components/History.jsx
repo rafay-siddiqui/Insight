@@ -13,9 +13,9 @@ export default function History(props) {
   return (
     <div>
       <ul className='list'>
-        <HistoryItem id="historyTitle" stock="Ticker" holdings="Value" date="Purchase Date" change="Change" />
+        <HistoryItem id="historyTitle" stock="Ticker" holdings="Price" date="Purchase Date" amount="Amount" />
         {query.data.map(x => (
-          <HistoryItem stock={x.stockticker} holdings={x.numberofstocks * x.purchaseprice} date={x.date} change={(Math.random() * (1.80 - 0.01) + 0.01).toFixed(2) + '%'}/>
+          <HistoryItem stock={x.stockticker} holdings={(x.purchaseprice * 1).toFixed(2)} date={(x.date.split('T'))[0]} amount={x.numberofstocks}/>
         ))}
       </ul>
     </div>

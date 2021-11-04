@@ -1,0 +1,21 @@
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'AAPL', '2021-10-06 12:05:00', 142, 5);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'HOOD', '2021-10-06 12:05:00', 42.060001, 3);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'AMZN', '2021-10-06 12:05:00', 3262.01, 7);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'TSLA', '2021-10-06 12:05:00', 782.75, 8);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'NVDA', '2021-10-06 12:05:00', 207, 1);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'GME', '2021-10-06 12:05:00', 171.07001, 6);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'AMC', '2021-10-06 12:05:00', 36.830002, 7);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'CGC', '2021-10-06 12:05:00', 13.8, 4);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'FB', '2021-10-06 12:05:00', 333.64002, 5);
+INSERT INTO purchases(user_id, stockTicker, date, purchasePrice, numberOfStocks) VALUES (1, 'GOOG', '2021-10-06 12:05:00', 2747.0801, 8);
+
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'AAPL');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'HOOD');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'AMZN');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'TSLA');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'NVDA');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'GME');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'AMC');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'CGC');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'FB');
+INSERT INTO stocks(user_id, stockTicker) VALUES (1, 'GOOG');
