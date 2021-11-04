@@ -9,7 +9,7 @@ export default function PercentChart(props) {
 
 
   const series = [{
-    name: "Portfolio Value ($)",
+    name: "% Change",
     data: [{
       x: new Date("2021-10-06").getTime(),
       y: 0
@@ -119,7 +119,7 @@ export default function PercentChart(props) {
       size: 0,
     },
     title: {
-      text: 'Portfolio Percentage Change',
+      text: 'Portfolio Percentage Change By Day',
       align: 'left'
     },
     fill: {

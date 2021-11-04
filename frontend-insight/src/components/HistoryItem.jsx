@@ -4,10 +4,10 @@ import './HistoryItem.scss'
 export default function HistoryItem(props) {
   return (
     <div className="historyItem" >
-      <h4>{props.stock}</h4>
-      <h4>{props.holdings}</h4>
-      <h4>{props.date}</h4>
-      <h4>{props.amount}</h4>
+      <h5>{props.stock}</h5>
+      <h5>{props.holdings}</h5>
+      <h5>{props.date}</h5>
+      <h5>{props.amount}</h5>
     </div>
   )
 }

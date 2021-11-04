@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import ExampleChart from "./ExampleChart";
 import PercentChart from "./PercentChart";
+import PercentCompoundedChart from "./PercentCompChart";
 import History from "../components/History";
 import YourStocks from "../components/YourStocks";
 import "./Portfolio.scss";
@@ -11,17 +12,26 @@ import Button from "../components/Button"
 
 export default function Portfolio(props) {
   const { user } = useContext(authContext);
-  const [percentChart, setPercentChart] = useState(true);
+  const [percentCompChart, setPercentCompChart] = useState(true)
+  const [percentChart, setPercentChart] = useState(false);
   const [moveChart, setMoveChart] = useState(false);
 
   const changeToPChart = () => {
     setMoveChart(false);
+    setPercentCompChart(false)
     setPercentChart(true);
   }
 
   const changeToMoveChart = () => {
-    setMoveChart(true);
     setPercentChart(false);
+    setPercentCompChart(false);
+    setMoveChart(true);
+  }
+
+  const changeToPCompChart = () => {
+    setPercentChart(false);
+    setMoveChart(false);
+    setPercentCompChart(true);
   }
 
   return (
@@ -36,9 +46,12 @@ export default function Portfolio(props) {
           </div>
 
           <div className='chart--portfolio'>
-            {moveChart && <ExampleChart />}
+            {percentCompChart && <PercentCompoundedChart/>}
             {percentChart && <PercentChart/>}
-            <Button chart onClick={changeToPChart}>Daily Percentage Change</Button> <Button chart onClick={changeToMoveChart}>Portfolio Movement</Button>
+            {moveChart && <ExampleChart />}
+            <Button chart onClick={changeToPCompChart}>Portfolio Percentage Change</Button> 
+            <Button chart onClick={changeToPChart}>Daily Percentage Change</Button>
+            <Button chart onClick={changeToMoveChart}>Portfolio Movement</Button>
           </div>
 
         </div>

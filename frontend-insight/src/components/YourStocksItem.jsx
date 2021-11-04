@@ -10,8 +10,8 @@ export default function YourStocksItem(props) {
 
   return (
     <div className={yourStocksItemClass} >
-      <h4 className="stock">{props.stock}</h4>
-      <h4 className="change">{props.change}</h4>
+      <h5 className="stock">{props.stock}</h5>
+      <h5 className="change">{props.change}</h5>
     </div>
   )
 }
