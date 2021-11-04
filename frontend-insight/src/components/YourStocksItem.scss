@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid white;
   width: 90%;
   padding: 0.2rem;
   background-color: lightgray;
@@ -12,12 +12,10 @@
 
 .stock {
   margin-left: 1em;
-  font-size: 2rem;
 }
 
 .change {
   margin-right: 1em;
-  font-size: 2rem;
 }
 
 .yourStocksItem--header {

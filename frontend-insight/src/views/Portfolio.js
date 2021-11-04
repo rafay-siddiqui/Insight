@@ -13,7 +13,7 @@ import getStockList from "../api/GetStockList";
 export default function Portfolio(props) {
   const { user } = useContext(authContext);
 
-  getStockList(user)
+  // getStockList(user)
 
   return (
     <>

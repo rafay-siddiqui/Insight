@@ -11,6 +11,6 @@ export default function Balance() {
     return (<h4 className="balance">Loading...</h4>)
   }
   return (
-    <h4 className="balance">Balance: {data.balance}</h4>
+    <h4 className="balance">Balance: $ {data.balance}</h4>
   )
 }

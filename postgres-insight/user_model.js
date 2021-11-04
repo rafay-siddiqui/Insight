@@ -69,6 +69,7 @@ const setBalance = (body, username) => {
     const { balance } = body
     pool.query(`UPDATE users SET balance = $1 WHERE userid = ${username}`, [balance], (error, results) => {
       if (error) {
+        console.log(error)
         reject(error)
       }
       resolve(`User balance now: ${balance}`)
@@ -122,15 +123,15 @@ const insertStockList = (body) => {
   })
 }
 
-const getStockList = (body) => {
+const getStockList = (userID) => {
   return new Promise(function (resolve, reject) {
-    const { user } = body
     pool.query(`
-    SELECT stockTicker
-    FROM stocks
-    JOIN users ON (users.userID = stocks.user_id)
-    WHERE users.name = $1
-    `, [user], (error, results) => {
+    SELECT purchases.stockTicker, numberOfStocks
+    FROM purchases
+    JOIN users ON (users.userID = purchases.user_id)
+    INNER JOIN stocks ON (purchases.stockTicker = stocks.stockTicker)
+    WHERE users.userID = $1
+    `, [userID], (error, results) => {
       if (error) {
         reject(error)
       }

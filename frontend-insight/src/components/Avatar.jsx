@@ -12,7 +12,7 @@ import getBalance from '../api/GetBalance';
 
 export default function Avatar(props) {
   const [open, setopen] = useState(false);
-  const { user } = useContext(authContext);
+  const { user, logout } = useContext(authContext);
   const [popUp, setPopUp] = useState(false);
 
   const balanceQuery = useQuery('balance', () => getBalance(user));
@@ -34,7 +34,7 @@ export default function Avatar(props) {
 
           <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#" onClick={() => setPopUp(!popUp)}> Add Balance </a></li>
           {popUp && <AddBalance addBalance={updateBalance} />}
-          <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={props.logout}> logout </a></li>
+          <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#" onClick={logout}> logout </a></li>
         </ul>
       </div>
       }

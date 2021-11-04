@@ -47,6 +47,7 @@ app.get('/checkstock/:ticker/:userID', (req, res) => {
     ticker: req.params.ticker,
     username: req.params.userID
   }
+  console.log('within check stock', req, body)
   user_model.checkStockExists(body)
     .then(response => {
       res.status(200).send(response)
@@ -59,6 +60,7 @@ app.get('/checkstock/:ticker/:userID', (req, res) => {
 app.post('/add/stock', (req, res) => {
   user_model.insertStockList(req.body)
   .then(response => {
+    console.log('within add stock', response)
     res.status(200).send(response)
   })
   .catch(error => {
@@ -67,11 +69,7 @@ app.post('/add/stock', (req, res) => {
 })
 
 app.get('/get/stocklist/:userID', (req, res) => {
-  const body = {
-    user: req.params.userID
-  }
-  console.log(body)
-  user_model.getStockList(body)
+  user_model.getStockList(req.params.userID)
   .then(response => {
     res.status(200).send(response)
   })

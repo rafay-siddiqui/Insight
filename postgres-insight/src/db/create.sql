@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS stocks CASCADE;
 CREATE TABLE users (
   userID SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(30) NOT NULL,
-  balance BIGINT
+  balance NUMERIC
 );
 
 INSERT INTO users(name, balance) VALUES ('Elon', 100000);
