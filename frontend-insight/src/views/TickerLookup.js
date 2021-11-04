@@ -11,6 +11,7 @@ import { useQuery } from "react-query";
 import { authContext } from "../providers/AuthProvider";
 import getBalance from "../api/GetBalance";
 import setBalance from "../api/SetBalance";
+import insertStockData from "../api/insertStockData";
 
 export default function TickerLookup(props) {
   const { user } = useContext(authContext);
@@ -20,7 +21,6 @@ export default function TickerLookup(props) {
   const [showResults, setShowResults] = useState(false)
   const [stocksAmount, setStocksAmount] = useState(0)
   const [errorAmount, setErrorAmount] = useState(false)
-  const [errorTicker, setErrorTicker] = useState(false)
   const [errorBalance, setErrorBalance] = useState(false)
 
   //updateBalance from purchase
@@ -35,6 +35,13 @@ export default function TickerLookup(props) {
       setBalance(balance, 1);
       postPurchase(props.data.symbol, 1, props.data.historical[0].date, props.data.historical[0].close, parseInt(stocksAmount))
     }
+  }
+
+  const iteratePostData = () => {
+    console.log('sending stock to database')
+    props.poster.historical.forEach(day => {
+      insertStockData(props.poster.symbol, day.date, day.close)
+    })
   }
 
   const resultsShow = (event) => {
@@ -53,6 +60,7 @@ export default function TickerLookup(props) {
         console.log('count from stocks table', res.count)
         if (res.count == 0) {
           addStockList(ticker.toUpperCase(), user)
+          iteratePostData();
         }
       })
   }
@@ -62,8 +70,11 @@ export default function TickerLookup(props) {
     setTicker("");
     
     stockValidation(props.data.symbol, stocksAmount)
-    updateBalance(parseFloat(stocksAmount) * parseFloat(props.data.historical[0].close));
-    setStocksAmount(0);
+    setTimeout(() => {
+      updateBalance(parseFloat(stocksAmount) * parseFloat(props.data.historical[0].close));
+      setStocksAmount(0);
+    }, 1000)
+
   }
 
   const purchaseValidation = () => {
@@ -81,13 +92,12 @@ export default function TickerLookup(props) {
       {showResults && <h2>Results</h2>}
       {(props.data && results.length > 0) && <BuyStock value={stocksAmount} onChange={setStocksAmount} onClick={purchaseValidation} />}
       {errorAmount && <h5 className='purchase--error' >Must select positive number of stocks</h5>}
-      {errorTicker && <h5 className='purchase--error' >Must a stock</h5>}
       {errorBalance && <h5 className='purchase--error' >Insufficient Balance</h5>}
       <TickerSearchBar value={ticker} onChange={setTicker} onClick={resultsShow} />
       <div className="tickerResults">
         {/* Iterate similar ticker results from API */}
         {results.map(result => (
-          <TickerResult onClick={() => { props.onClick(result.symbol); }} ticker={result.symbol} company={result.name} />
+          <TickerResult onClick={() => { props.onClick(result.symbol); props.posterClick(result.symbol) }} ticker={result.symbol} company={result.name} />
         ))}
       </div>
     </div>

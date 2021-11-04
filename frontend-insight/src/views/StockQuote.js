@@ -3,6 +3,7 @@ import './StockQuote.scss'
 import Button from '../components/Button'
 import { hyperlinkTicker } from '../helper/fetchers';
 import Chart from 'react-apexcharts'
+import insertStockData from '../api/insertStockData';
 
 export default function StockQuote(props) {
 

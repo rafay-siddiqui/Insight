@@ -1,5 +1,5 @@
 const Pool = require('pg').Pool
-const pool = new Pool ({
+const pool = new Pool({
   user: 'developer',
   host: 'localhost',
   database: 'insight_app',
@@ -85,7 +85,7 @@ const addPurchase = (body) => {
       if (error) {
         reject(error)
       }
-      resolve (`User with ID ${userID} purchased ${numberOfStocks} stocks of the stock with ticker ${stockTicker} at ${date} for ${purchasePrice} each`)
+      resolve(`User with ID ${userID} purchased ${numberOfStocks} stocks of the stock with ticker ${stockTicker} at ${date} for ${purchasePrice} each`)
     })
   })
 }
@@ -106,8 +106,22 @@ const checkStockExists = (body) => {
   })
 }
 
+const checkDataExists = (ticker) => {
+  return new Promise(function(resolve, reject) {
+    pool.query(`
+    SELECT COUNT(*) 
+    FROM historicalstocks
+    WHERE stock_ticker = $1`, [ticker], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows[0])
+    })
+  })
+}
+
 const insertStockList = (body) => {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     const { ticker, user } = body
     pool.query(`
     INSERT INTO stocks(stockTicker, user_id)
@@ -124,7 +138,7 @@ const insertStockList = (body) => {
 }
 
 const getStockList = (userID) => {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     pool.query(`
     SELECT purchases.stockTicker, numberOfStocks
     FROM purchases
@@ -132,6 +146,37 @@ const getStockList = (userID) => {
     INNER JOIN stocks ON (purchases.stockTicker = stocks.stockTicker)
     WHERE users.userID = $1
     `, [userID], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
+const insertStockData = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { ticker, date, price } = body
+    pool.query(`
+    INSERT INTO historicalStocks(stock_ticker, date, price)
+    VALUES ($1, $2, $3)
+    `, [ticker, date, price], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(results.rows)
+    })
+  })
+}
+
+const getStockData = (ticker) => {
+  return new Promise(function(resolve, reject) {
+    pool.query(`
+    SELECT * 
+    FROM historicalstocks 
+    WHERE stock_ticker = $1
+    ORDER BY date
+    `, [ticker], (error, results) => {
       if (error) {
         reject(error)
       }
@@ -150,5 +195,8 @@ module.exports = {
   getDetailedHistory,
   checkStockExists,
   insertStockList,
-  getStockList
+  getStockList,
+  insertStockData,
+  getStockData,
+  checkDataExists
 }
